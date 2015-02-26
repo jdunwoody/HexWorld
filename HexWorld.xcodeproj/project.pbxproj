@@ -15,6 +15,11 @@
 		9E35B0291A985CB100FFA9F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E35B0281A985CB100FFA9F7 /* Images.xcassets */; };
 		9E35B02C1A985CB100FFA9F7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E35B02A1A985CB100FFA9F7 /* LaunchScreen.xib */; };
 		9E35B0381A985CB100FFA9F7 /* HexWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35B0371A985CB100FFA9F7 /* HexWorldTests.swift */; };
+		9E35B0451A985DC200FFA9F7 /* HexNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35B0441A985DC200FFA9F7 /* HexNode.swift */; };
+		9E35B0471A985E6C00FFA9F7 /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35B0461A985E6C00FFA9F7 /* Textures.swift */; };
+		9E35B0491A985F1E00FFA9F7 /* Texture.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9E35B0481A985F1E00FFA9F7 /* Texture.atlas */; };
+		9E601DB21A9F34C700ECF036 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB11A9F34C700ECF036 /* Bird.swift */; };
+		9E71CB711A9C816B00215299 /* TiledBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E71CB701A9C816B00215299 /* TiledBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,11 @@
 		9E35B0311A985CB100FFA9F7 /* HexWorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HexWorldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E35B0361A985CB100FFA9F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E35B0371A985CB100FFA9F7 /* HexWorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexWorldTests.swift; sourceTree = "<group>"; };
+		9E35B0441A985DC200FFA9F7 /* HexNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexNode.swift; sourceTree = "<group>"; };
+		9E35B0461A985E6C00FFA9F7 /* Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Textures.swift; path = Texture/Textures.swift; sourceTree = "<group>"; };
+		9E35B0481A985F1E00FFA9F7 /* Texture.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Texture.atlas; sourceTree = "<group>"; };
+		9E601DB11A9F34C700ECF036 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bird.swift; path = Birds/Bird.swift; sourceTree = "<group>"; };
+		9E71CB701A9C816B00215299 /* TiledBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiledBackground.swift; path = Background/TiledBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +91,15 @@
 		9E35B01A1A985CB100FFA9F7 /* HexWorld */ = {
 			isa = PBXGroup;
 			children = (
-				9E35B01D1A985CB100FFA9F7 /* AppDelegate.swift */,
-				9E35B01F1A985CB100FFA9F7 /* GameScene.sks */,
+				9E601DB01A9F344900ECF036 /* Background */,
+				9E601DB11A9F34C700ECF036 /* Bird.swift */,
 				9E35B0211A985CB100FFA9F7 /* GameScene.swift */,
 				9E35B0231A985CB100FFA9F7 /* GameViewController.swift */,
-				9E35B0251A985CB100FFA9F7 /* Main.storyboard */,
+				9E35B0431A985DC200FFA9F7 /* Hex */,
 				9E35B0281A985CB100FFA9F7 /* Images.xcassets */,
-				9E35B02A1A985CB100FFA9F7 /* LaunchScreen.xib */,
 				9E35B01B1A985CB100FFA9F7 /* Supporting Files */,
+				9E35B0481A985F1E00FFA9F7 /* Texture.atlas */,
+				9E35B0461A985E6C00FFA9F7 /* Textures.swift */,
 			);
 			path = HexWorld;
 			sourceTree = "<group>";
@@ -96,6 +107,10 @@
 		9E35B01B1A985CB100FFA9F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9E35B01D1A985CB100FFA9F7 /* AppDelegate.swift */,
+				9E35B01F1A985CB100FFA9F7 /* GameScene.sks */,
+				9E35B02A1A985CB100FFA9F7 /* LaunchScreen.xib */,
+				9E35B0251A985CB100FFA9F7 /* Main.storyboard */,
 				9E35B01C1A985CB100FFA9F7 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -116,6 +131,22 @@
 				9E35B0361A985CB100FFA9F7 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9E35B0431A985DC200FFA9F7 /* Hex */ = {
+			isa = PBXGroup;
+			children = (
+				9E35B0441A985DC200FFA9F7 /* HexNode.swift */,
+			);
+			path = Hex;
+			sourceTree = "<group>";
+		};
+		9E601DB01A9F344900ECF036 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				9E71CB701A9C816B00215299 /* TiledBackground.swift */,
+			);
+			name = Background;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +232,7 @@
 				9E35B02C1A985CB100FFA9F7 /* LaunchScreen.xib in Resources */,
 				9E35B0291A985CB100FFA9F7 /* Images.xcassets in Resources */,
 				9E35B0201A985CB100FFA9F7 /* GameScene.sks in Resources */,
+				9E35B0491A985F1E00FFA9F7 /* Texture.atlas in Resources */,
 				9E35B0271A985CB100FFA9F7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +251,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E71CB711A9C816B00215299 /* TiledBackground.swift in Sources */,
+				9E601DB21A9F34C700ECF036 /* Bird.swift in Sources */,
 				9E35B0221A985CB100FFA9F7 /* GameScene.swift in Sources */,
+				9E35B0471A985E6C00FFA9F7 /* Textures.swift in Sources */,
 				9E35B0241A985CB100FFA9F7 /* GameViewController.swift in Sources */,
 				9E35B01E1A985CB100FFA9F7 /* AppDelegate.swift in Sources */,
+				9E35B0451A985DC200FFA9F7 /* HexNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +451,7 @@
 				9E35B03D1A985CB100FFA9F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9E35B03E1A985CB100FFA9F7 /* Build configuration list for PBXNativeTarget "HexWorldTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +460,7 @@
 				9E35B0401A985CB100FFA9F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
