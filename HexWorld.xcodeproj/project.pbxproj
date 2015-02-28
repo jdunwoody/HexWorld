@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E23C9A91AA1A8AE0059305E /* Birds.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9E23C9A81AA1A8AE0059305E /* Birds.atlas */; };
 		9E35B01E1A985CB100FFA9F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35B01D1A985CB100FFA9F7 /* AppDelegate.swift */; };
 		9E35B0201A985CB100FFA9F7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E35B01F1A985CB100FFA9F7 /* GameScene.sks */; };
 		9E35B0221A985CB100FFA9F7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35B0211A985CB100FFA9F7 /* GameScene.swift */; };
@@ -15,11 +16,25 @@
 		9E35B0291A985CB100FFA9F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E35B0281A985CB100FFA9F7 /* Images.xcassets */; };
 		9E35B02C1A985CB100FFA9F7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E35B02A1A985CB100FFA9F7 /* LaunchScreen.xib */; };
 		9E35B0381A985CB100FFA9F7 /* HexWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35B0371A985CB100FFA9F7 /* HexWorldTests.swift */; };
-		9E35B0451A985DC200FFA9F7 /* HexNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35B0441A985DC200FFA9F7 /* HexNode.swift */; };
-		9E35B0471A985E6C00FFA9F7 /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35B0461A985E6C00FFA9F7 /* Textures.swift */; };
 		9E35B0491A985F1E00FFA9F7 /* Texture.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9E35B0481A985F1E00FFA9F7 /* Texture.atlas */; };
-		9E601DB21A9F34C700ECF036 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB11A9F34C700ECF036 /* Bird.swift */; };
-		9E71CB711A9C816B00215299 /* TiledBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E71CB701A9C816B00215299 /* TiledBackground.swift */; };
+		9E601DBB1A9F38C800ECF036 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB31A9F38C800ECF036 /* Bird.swift */; };
+		9E601DBC1A9F38C800ECF036 /* BirdActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB41A9F38C800ECF036 /* BirdActions.swift */; };
+		9E601DBD1A9F38C800ECF036 /* BirdSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB51A9F38C800ECF036 /* BirdSprite.swift */; };
+		9E601DBF1A9F38C800ECF036 /* DebugControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB71A9F38C800ECF036 /* DebugControls.swift */; };
+		9E601DC01A9F38C800ECF036 /* DebugForceLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB81A9F38C800ECF036 /* DebugForceLine.swift */; };
+		9E601DC11A9F38C800ECF036 /* DebugSteering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB91A9F38C800ECF036 /* DebugSteering.swift */; };
+		9E601DC21A9F38C800ECF036 /* Flock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DBA1A9F38C800ECF036 /* Flock.swift */; };
+		9E601DCC1A9F38D200ECF036 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E601DC31A9F38D200ECF036 /* Main.storyboard */; };
+		9E601DCD1A9F38D200ECF036 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DC41A9F38D200ECF036 /* Point.swift */; };
+		9E601DCE1A9F38D200ECF036 /* Root.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E601DC51A9F38D200ECF036 /* Root.plist */; };
+		9E601DCF1A9F38D200ECF036 /* SampleBesierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DC61A9F38D200ECF036 /* SampleBesierView.swift */; };
+		9E601DD01A9F38D200ECF036 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DC71A9F38D200ECF036 /* Settings.swift */; };
+		9E601DD11A9F38D200ECF036 /* Steering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DC81A9F38D200ECF036 /* Steering.swift */; };
+		9E601DD21A9F38D200ECF036 /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DC91A9F38D200ECF036 /* Textures.swift */; };
+		9E601DD31A9F38D200ECF036 /* Vector2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DCA1A9F38D200ECF036 /* Vector2D.swift */; };
+		9E601DD41A9F38D200ECF036 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DCB1A9F38D200ECF036 /* World.swift */; };
+		9E601DED1A9F3D2E00ECF036 /* HexNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DE81A9F3D2E00ECF036 /* HexNode.swift */; };
+		9E601DEF1A9F3EBB00ECF036 /* TiledBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DEE1A9F3EBB00ECF036 /* TiledBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E23C9A81AA1A8AE0059305E /* Birds.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Birds.atlas; sourceTree = "<group>"; };
 		9E35B0181A985CB100FFA9F7 /* HexWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HexWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E35B01C1A985CB100FFA9F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E35B01D1A985CB100FFA9F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,11 +61,25 @@
 		9E35B0311A985CB100FFA9F7 /* HexWorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HexWorldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E35B0361A985CB100FFA9F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E35B0371A985CB100FFA9F7 /* HexWorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexWorldTests.swift; sourceTree = "<group>"; };
-		9E35B0441A985DC200FFA9F7 /* HexNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexNode.swift; sourceTree = "<group>"; };
-		9E35B0461A985E6C00FFA9F7 /* Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Textures.swift; path = Texture/Textures.swift; sourceTree = "<group>"; };
 		9E35B0481A985F1E00FFA9F7 /* Texture.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Texture.atlas; sourceTree = "<group>"; };
-		9E601DB11A9F34C700ECF036 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bird.swift; path = Birds/Bird.swift; sourceTree = "<group>"; };
-		9E71CB701A9C816B00215299 /* TiledBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiledBackground.swift; path = Background/TiledBackground.swift; sourceTree = "<group>"; };
+		9E601DB31A9F38C800ECF036 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
+		9E601DB41A9F38C800ECF036 /* BirdActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdActions.swift; sourceTree = "<group>"; };
+		9E601DB51A9F38C800ECF036 /* BirdSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdSprite.swift; sourceTree = "<group>"; };
+		9E601DB71A9F38C800ECF036 /* DebugControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugControls.swift; sourceTree = "<group>"; };
+		9E601DB81A9F38C800ECF036 /* DebugForceLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugForceLine.swift; sourceTree = "<group>"; };
+		9E601DB91A9F38C800ECF036 /* DebugSteering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugSteering.swift; sourceTree = "<group>"; };
+		9E601DBA1A9F38C800ECF036 /* Flock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flock.swift; sourceTree = "<group>"; };
+		9E601DC31A9F38D200ECF036 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9E601DC41A9F38D200ECF036 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		9E601DC51A9F38D200ECF036 /* Root.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Root.plist; sourceTree = "<group>"; };
+		9E601DC61A9F38D200ECF036 /* SampleBesierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleBesierView.swift; sourceTree = "<group>"; };
+		9E601DC71A9F38D200ECF036 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		9E601DC81A9F38D200ECF036 /* Steering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steering.swift; sourceTree = "<group>"; };
+		9E601DC91A9F38D200ECF036 /* Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
+		9E601DCA1A9F38D200ECF036 /* Vector2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector2D.swift; sourceTree = "<group>"; };
+		9E601DCB1A9F38D200ECF036 /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		9E601DE81A9F3D2E00ECF036 /* HexNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexNode.swift; sourceTree = "<group>"; };
+		9E601DEE1A9F3EBB00ECF036 /* TiledBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiledBackground.swift; path = Background/TiledBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +100,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E23C9A41AA19C810059305E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9E601DC71A9F38D200ECF036 /* Settings.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		9E23C9A51AA19C8B0059305E /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				9E601DC91A9F38D200ECF036 /* Textures.swift */,
+				9E601DEE1A9F3EBB00ECF036 /* TiledBackground.swift */,
+			);
+			name = Background;
+			sourceTree = "<group>";
+		};
+		9E23C9A61AA19C9C0059305E /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				9E601DC41A9F38D200ECF036 /* Point.swift */,
+				9E601DCA1A9F38D200ECF036 /* Vector2D.swift */,
+			);
+			name = Geometry;
+			sourceTree = "<group>";
+		};
+		9E23C9A71AA19CBE0059305E /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				9E601DB71A9F38C800ECF036 /* DebugControls.swift */,
+				9E601DB81A9F38C800ECF036 /* DebugForceLine.swift */,
+				9E601DB91A9F38C800ECF036 /* DebugSteering.swift */,
+			);
+			name = Debug;
+			sourceTree = "<group>";
+		};
+		9E23C9AA1AA1A9C20059305E /* Bird */ = {
+			isa = PBXGroup;
+			children = (
+				9E601DB31A9F38C800ECF036 /* Bird.swift */,
+				9E601DBA1A9F38C800ECF036 /* Flock.swift */,
+			);
+			name = Bird;
+			sourceTree = "<group>";
+		};
+		9E23C9AB1AA1A9CF0059305E /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				9E601DB51A9F38C800ECF036 /* BirdSprite.swift */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
+		9E23C9AC1AA1A9EA0059305E /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				9E601DB41A9F38C800ECF036 /* BirdActions.swift */,
+			);
+			name = Actions;
+			sourceTree = "<group>";
+		};
 		9E35B00F1A985CB100FFA9F7 = {
 			isa = PBXGroup;
 			children = (
@@ -91,15 +182,24 @@
 		9E35B01A1A985CB100FFA9F7 /* HexWorld */ = {
 			isa = PBXGroup;
 			children = (
-				9E601DB01A9F344900ECF036 /* Background */,
-				9E601DB11A9F34C700ECF036 /* Bird.swift */,
+				9E23C9AC1AA1A9EA0059305E /* Actions */,
+				9E23C9A51AA19C8B0059305E /* Background */,
+				9E23C9AA1AA1A9C20059305E /* Bird */,
+				9E23C9A81AA1A8AE0059305E /* Birds.atlas */,
+				9E23C9A71AA19CBE0059305E /* Debug */,
 				9E35B0211A985CB100FFA9F7 /* GameScene.swift */,
 				9E35B0231A985CB100FFA9F7 /* GameViewController.swift */,
-				9E35B0431A985DC200FFA9F7 /* Hex */,
+				9E23C9A61AA19C9C0059305E /* Geometry */,
+				9E601DE71A9F3D2E00ECF036 /* Hex */,
 				9E35B0281A985CB100FFA9F7 /* Images.xcassets */,
+				9E601DC31A9F38D200ECF036 /* Main.storyboard */,
+				9E601DC61A9F38D200ECF036 /* SampleBesierView.swift */,
+				9E23C9A41AA19C810059305E /* Settings */,
+				9E23C9AB1AA1A9CF0059305E /* Sprites */,
+				9E601DC81A9F38D200ECF036 /* Steering.swift */,
 				9E35B01B1A985CB100FFA9F7 /* Supporting Files */,
 				9E35B0481A985F1E00FFA9F7 /* Texture.atlas */,
-				9E35B0461A985E6C00FFA9F7 /* Textures.swift */,
+				9E601DCB1A9F38D200ECF036 /* World.swift */,
 			);
 			path = HexWorld;
 			sourceTree = "<group>";
@@ -107,6 +207,7 @@
 		9E35B01B1A985CB100FFA9F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9E601DC51A9F38D200ECF036 /* Root.plist */,
 				9E35B01D1A985CB100FFA9F7 /* AppDelegate.swift */,
 				9E35B01F1A985CB100FFA9F7 /* GameScene.sks */,
 				9E35B02A1A985CB100FFA9F7 /* LaunchScreen.xib */,
@@ -133,20 +234,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9E35B0431A985DC200FFA9F7 /* Hex */ = {
+		9E601DE71A9F3D2E00ECF036 /* Hex */ = {
 			isa = PBXGroup;
 			children = (
-				9E35B0441A985DC200FFA9F7 /* HexNode.swift */,
+				9E601DE81A9F3D2E00ECF036 /* HexNode.swift */,
 			);
 			path = Hex;
-			sourceTree = "<group>";
-		};
-		9E601DB01A9F344900ECF036 /* Background */ = {
-			isa = PBXGroup;
-			children = (
-				9E71CB701A9C816B00215299 /* TiledBackground.swift */,
-			);
-			name = Background;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +324,10 @@
 			files = (
 				9E35B02C1A985CB100FFA9F7 /* LaunchScreen.xib in Resources */,
 				9E35B0291A985CB100FFA9F7 /* Images.xcassets in Resources */,
+				9E23C9A91AA1A8AE0059305E /* Birds.atlas in Resources */,
+				9E601DCE1A9F38D200ECF036 /* Root.plist in Resources */,
 				9E35B0201A985CB100FFA9F7 /* GameScene.sks in Resources */,
+				9E601DCC1A9F38D200ECF036 /* Main.storyboard in Resources */,
 				9E35B0491A985F1E00FFA9F7 /* Texture.atlas in Resources */,
 				9E35B0271A985CB100FFA9F7 /* Main.storyboard in Resources */,
 			);
@@ -251,13 +347,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E71CB711A9C816B00215299 /* TiledBackground.swift in Sources */,
-				9E601DB21A9F34C700ECF036 /* Bird.swift in Sources */,
+				9E601DEF1A9F3EBB00ECF036 /* TiledBackground.swift in Sources */,
+				9E601DD21A9F38D200ECF036 /* Textures.swift in Sources */,
+				9E601DBF1A9F38C800ECF036 /* DebugControls.swift in Sources */,
+				9E601DBD1A9F38C800ECF036 /* BirdSprite.swift in Sources */,
+				9E601DD01A9F38D200ECF036 /* Settings.swift in Sources */,
+				9E601DBB1A9F38C800ECF036 /* Bird.swift in Sources */,
+				9E601DC11A9F38C800ECF036 /* DebugSteering.swift in Sources */,
 				9E35B0221A985CB100FFA9F7 /* GameScene.swift in Sources */,
-				9E35B0471A985E6C00FFA9F7 /* Textures.swift in Sources */,
+				9E601DC01A9F38C800ECF036 /* DebugForceLine.swift in Sources */,
+				9E601DCF1A9F38D200ECF036 /* SampleBesierView.swift in Sources */,
 				9E35B0241A985CB100FFA9F7 /* GameViewController.swift in Sources */,
+				9E601DD41A9F38D200ECF036 /* World.swift in Sources */,
 				9E35B01E1A985CB100FFA9F7 /* AppDelegate.swift in Sources */,
-				9E35B0451A985DC200FFA9F7 /* HexNode.swift in Sources */,
+				9E601DD31A9F38D200ECF036 /* Vector2D.swift in Sources */,
+				9E601DCD1A9F38D200ECF036 /* Point.swift in Sources */,
+				9E601DBC1A9F38C800ECF036 /* BirdActions.swift in Sources */,
+				9E601DED1A9F3D2E00ECF036 /* HexNode.swift in Sources */,
+				9E601DD11A9F38D200ECF036 /* Steering.swift in Sources */,
+				9E601DC21A9F38C800ECF036 /* Flock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
