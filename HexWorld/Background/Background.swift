@@ -9,22 +9,23 @@
 import UIKit
 import Spritekit
 
-class TiledBackground: NSObject {
+class Background: NSObject {
     var nodes:[HexNode]
+    let textures = BackgroundTextures()
     
-    init(textures: Textures) {
+    override init() {
         nodes = []
-        var textureWidth = Int(textures.water.size().width)
-        var textureHeight = Int(textures.water.size().height) * 2 / 3
-        
-        for var y = 0; y < 10; y++ {
-            for var x = 0; x < 10; x++ {
-                let hexNode = HexNode(texture: (y % 2) == 0 ? textures.water : textures.grass)
-                hexNode.position = CGPoint(x: x * textureWidth + (y % 2) * textureWidth / 2, y: y * textureHeight)
-                nodes.append(hexNode)
-            }
-        }
-        
+        //        var textureWidth = Int(textures.water.size().width)
+        //        var textureHeight = Int(textures.water.size().height) * 2 / 3
+        //
+        //        for var y = 0; y < 10; y++ {
+        //            for var x = 0; x < 10; x++ {
+        //                let hexNode = HexNode(texture: (y % 2) == 0 ? textures.water : textures.grass)
+        //                hexNode.position = CGPoint(x: x * textureWidth + (y % 2) * textureWidth / 2, y: y * textureHeight)
+        //                nodes.append(hexNode)
+        //            }
+        //        }
+        //
         super.init()
     }
 }

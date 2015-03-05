@@ -74,7 +74,7 @@
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
-			<integer>1</integer>
+			<integer>3</integer>
 			<key>Key</key>
 			<string>number_of_birds_preference</string>
 			<key>MaximumValue</key>

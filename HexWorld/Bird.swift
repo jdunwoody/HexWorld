@@ -25,7 +25,7 @@ class Bird
     let steering: Steering
     let actions: BirdActions
     let sprite: BirdSprite
-    var debugForceLine: DebugForceLine?
+    //    var debugForceLine: DebugForceLine?
     let world: World
     
     //    var position: Vector2D  {
@@ -42,17 +42,17 @@ class Bird
     //
     //            self.sprite.position = newValue.point
     //        }
-    //    } 
+    //    }
     
     init(world: World) {
         self.world = world
         self.steering = Steering(world: world)
-        let textures = Textures()
+        let textures = BirdTextures()
         self.actions = BirdActions(textures: textures)
         self.sprite = BirdSprite(actions : self.actions, textures : textures)
         //        self.origin = Vector2D()
         self.heading = Vector2D(x: 0, y: 1.0)
-        self.debugForceLine = DebugForceLine()
+        //        self.debugForceLine = DebugForceLine()
         self.velocity = Vector2D()
         self.side = Vector2D().rotate(90.0)
         self.mass = 1000.0
@@ -65,9 +65,9 @@ class Bird
         //        self.origin = origin
         self.maxYTranslation = maxYTranslation
         self.sprite.position = origin
-        if let forceLine = debugForceLine {
-            sprite.addChild(forceLine.sprite)
-        }
+        //        if let forceLine = debugForceLine {
+        //            sprite.addChild(forceLine.sprite)
+        //        }
     }
     
     //    func fly()
@@ -135,9 +135,9 @@ class Bird
         
         let force = steering.calculate(self, neighbours: flock.neighbours(self), flock: flock)
         
-        if let forceLine = debugForceLine {
-            forceLine.update(force)
-        }
+        //        if let forceLine = debugForceLine {
+        //            forceLine.update(force)
+        //        }
         
         //        let angle = atan2(force.y, force.x)
         //        let p:CGPoint = self.sprite.position

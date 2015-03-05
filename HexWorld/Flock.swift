@@ -11,8 +11,9 @@ import SpriteKit
 
 class Flock {
     
-    var birds: [Bird]
     let lead: Bird
+    var birds: [Bird]
+    
 //    var origin: Vector2D {
 //        get {
 //            return birds[0].origin
@@ -37,6 +38,7 @@ class Flock {
         for var i = 0; i < Settings.initialNumberOfBirds; i++ {
             birds.append(Bird(world: world))
         }
+        
         lead = birds[0]
     }
     

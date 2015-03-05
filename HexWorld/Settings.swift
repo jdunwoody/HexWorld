@@ -23,7 +23,7 @@ class Settings {
             if let numberOfBirds = NSUserDefaults.standardUserDefaults().objectForKey("number_of_birds_preference") as Int? {
                 return numberOfBirds
             }
-            return 1
+            return 3
         }
         
     }

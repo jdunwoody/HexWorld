@@ -31,18 +31,18 @@ class GameViewController: UIViewController {
     //    @IBOutlet var verticalPanGestureRecogniser: UIPanGestureRecognizer!
     
     var sceneRef : GameScene?
-    var debugControls : DebugControls? = nil
-    var bezierPath = UIBezierPath()
+    //    var debugControls : DebugControls? = nil
+    //    var bezierPath = UIBezierPath()
     var controlPoint2 = Vector2D()
     //    var bird : Bird
     @IBOutlet weak var controlsView: UIView!
     
     required init(coder: NSCoder) {
         //        self.bird = Bird()
-        self.debugControls = DebugControls()
+        //        self.debugControls = DebugControls()
         super.init(coder: coder)
         
-        debugControls?.updateControls(Vector2D(x: 0.0, y: 200.0 ))
+        //        debugControls?.updateControls(Vector2D(x: 0.0, y: 200.0 ))
     }
     
     @IBAction func configPressed(sender: AnyObject) {
@@ -60,7 +60,7 @@ class GameViewController: UIViewController {
         
         //        self.sceneRef = GameScene.unarchiveFromFile("GameScene") as GameScene!
         
-        self.debugControls?.updateControls(Vector2D(x: 0.0, y: 200.0 ))
+        //        self.debugControls?.updateControls(Vector2D(x: 0.0, y: 200.0 ))
         
         if let scene = sceneRef {
             scene.configure(view.center, maxYTranslation : self.controlsView.frame.height)
@@ -82,48 +82,48 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func panned(sender: AnyObject) {
-        let velocity = controlsPanGestureRegogniser.velocityInView(self.controlsView);
-        let translation = controlsPanGestureRegogniser.translationInView(self.controlsView)
-        
-        if let scene = sceneRef {
-            //            NSLog("Velocity %@", NSStringFromVector2D(velocity))
-            //            NSLog("Translation %@", NSStringFromCGPoint(translation))
-            //            NSLog("Total / 2 %@", view.frame.size.width / 2.0)
-            
-            if controlsPanGestureRegogniser.state == UIGestureRecognizerState.Ended {
-                debugControls?.updateControls(Vector2D(x: 0.0, y: 200.0 ))
-                if translation.x != 0 {
-                    scene.stoppedHorizontalPanning()
-                }
-                if translation.y != 0 {
-                    scene.stoppedVerticalPanning()
-                }
-                
-            } else {
-                debugControls?.updateControls(Vector2D(x: translation.x, y: translation.y))
-                
-                if translation.x > 0 {
-                    scene.pannedRight(CGFloat(abs(translation.x)) / (CGFloat(controlsView.frame.size.width / 2.0)))
-                    
-                } else if translation.x < 0 {
-                    scene.pannedLeft(CGFloat(abs(translation.x)) / (CGFloat(controlsView.frame.size.width / 2.0)))
-                } else {
-                    
-                }
-                
-                if translation.y > 0 {
-                    let percentMoved = CGFloat(abs(translation.y)) / (CGFloat(controlsView.frame.size.height))
-                    
-                    scene.pannedBackward(percentMoved)
-                } else if translation.y < 0 {
-                    let percentMoved = CGFloat(abs(translation.y)) / (CGFloat(controlsView.frame.size.height))
-                    
-                    scene.pannedForward(percentMoved)
-                } else {
-                    
-                }
-            }
-        }
+        //        let velocity = controlsPanGestureRegogniser.velocityInView(self.controlsView);
+        //        let translation = controlsPanGestureRegogniser.translationInView(self.controlsView)
+        //
+        //        if let scene = sceneRef {
+        //            //            NSLog("Velocity %@", NSStringFromVector2D(velocity))
+        //            //            NSLog("Translation %@", NSStringFromCGPoint(translation))
+        //            //            NSLog("Total / 2 %@", view.frame.size.width / 2.0)
+        //
+        //            if controlsPanGestureRegogniser.state == UIGestureRecognizerState.Ended {
+        //                //                debugControls?.updateControls(Vector2D(x: 0.0, y: 200.0 ))
+        //                if translation.x != 0 {
+        //                    scene.stoppedHorizontalPanning()
+        //                }
+        //                if translation.y != 0 {
+        //                    scene.stoppedVerticalPanning()
+        //                }
+        //
+        //            } else {
+        //                //                debugControls?.updateControls(Vector2D(x: translation.x, y: translation.y))
+        //
+        //                if translation.x > 0 {
+        //                    scene.pannedRight(CGFloat(abs(translation.x)) / (CGFloat(controlsView.frame.size.width / 2.0)))
+        //
+        //                } else if translation.x < 0 {
+        //                    scene.pannedLeft(CGFloat(abs(translation.x)) / (CGFloat(controlsView.frame.size.width / 2.0)))
+        //                } else {
+        //
+        //                }
+        //
+        //                if translation.y > 0 {
+        //                    let percentMoved = CGFloat(abs(translation.y)) / (CGFloat(controlsView.frame.size.height))
+        //
+        //                    scene.pannedBackward(percentMoved)
+        //                } else if translation.y < 0 {
+        //                    let percentMoved = CGFloat(abs(translation.y)) / (CGFloat(controlsView.frame.size.height))
+        //
+        //                    scene.pannedForward(percentMoved)
+        //                } else {
+        //
+        //                }
+        //            }
+        //        }
     }
     
     override func shouldAutorotate() -> Bool {

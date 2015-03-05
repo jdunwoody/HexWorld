@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9E23C9A91AA1A8AE0059305E /* Birds.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9E23C9A81AA1A8AE0059305E /* Birds.atlas */; };
+		9E23C9AE1AA1E1A70059305E /* BirdTextures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E23C9AD1AA1E1A70059305E /* BirdTextures.swift */; };
 		9E35B01E1A985CB100FFA9F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35B01D1A985CB100FFA9F7 /* AppDelegate.swift */; };
 		9E35B0201A985CB100FFA9F7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9E35B01F1A985CB100FFA9F7 /* GameScene.sks */; };
 		9E35B0221A985CB100FFA9F7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35B0211A985CB100FFA9F7 /* GameScene.swift */; };
@@ -30,11 +31,11 @@
 		9E601DCF1A9F38D200ECF036 /* SampleBesierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DC61A9F38D200ECF036 /* SampleBesierView.swift */; };
 		9E601DD01A9F38D200ECF036 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DC71A9F38D200ECF036 /* Settings.swift */; };
 		9E601DD11A9F38D200ECF036 /* Steering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DC81A9F38D200ECF036 /* Steering.swift */; };
-		9E601DD21A9F38D200ECF036 /* Textures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DC91A9F38D200ECF036 /* Textures.swift */; };
+		9E601DD21A9F38D200ECF036 /* BackgroundTextures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DC91A9F38D200ECF036 /* BackgroundTextures.swift */; };
 		9E601DD31A9F38D200ECF036 /* Vector2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DCA1A9F38D200ECF036 /* Vector2D.swift */; };
 		9E601DD41A9F38D200ECF036 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DCB1A9F38D200ECF036 /* World.swift */; };
 		9E601DED1A9F3D2E00ECF036 /* HexNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DE81A9F3D2E00ECF036 /* HexNode.swift */; };
-		9E601DEF1A9F3EBB00ECF036 /* TiledBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DEE1A9F3EBB00ECF036 /* TiledBackground.swift */; };
+		9E601DEF1A9F3EBB00ECF036 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DEE1A9F3EBB00ECF036 /* Background.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		9E23C9A81AA1A8AE0059305E /* Birds.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Birds.atlas; sourceTree = "<group>"; };
+		9E23C9AD1AA1E1A70059305E /* BirdTextures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdTextures.swift; sourceTree = "<group>"; };
 		9E35B0181A985CB100FFA9F7 /* HexWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HexWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E35B01C1A985CB100FFA9F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E35B01D1A985CB100FFA9F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,11 +77,11 @@
 		9E601DC61A9F38D200ECF036 /* SampleBesierView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleBesierView.swift; sourceTree = "<group>"; };
 		9E601DC71A9F38D200ECF036 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		9E601DC81A9F38D200ECF036 /* Steering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Steering.swift; sourceTree = "<group>"; };
-		9E601DC91A9F38D200ECF036 /* Textures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Textures.swift; sourceTree = "<group>"; };
+		9E601DC91A9F38D200ECF036 /* BackgroundTextures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTextures.swift; sourceTree = "<group>"; };
 		9E601DCA1A9F38D200ECF036 /* Vector2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector2D.swift; sourceTree = "<group>"; };
 		9E601DCB1A9F38D200ECF036 /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		9E601DE81A9F3D2E00ECF036 /* HexNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexNode.swift; sourceTree = "<group>"; };
-		9E601DEE1A9F3EBB00ECF036 /* TiledBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TiledBackground.swift; path = Background/TiledBackground.swift; sourceTree = "<group>"; };
+		9E601DEE1A9F3EBB00ECF036 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Background.swift; path = Background/Background.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +113,8 @@
 		9E23C9A51AA19C8B0059305E /* Background */ = {
 			isa = PBXGroup;
 			children = (
-				9E601DC91A9F38D200ECF036 /* Textures.swift */,
-				9E601DEE1A9F3EBB00ECF036 /* TiledBackground.swift */,
+				9E601DC91A9F38D200ECF036 /* BackgroundTextures.swift */,
+				9E601DEE1A9F3EBB00ECF036 /* Background.swift */,
 			);
 			name = Background;
 			sourceTree = "<group>";
@@ -139,26 +141,13 @@
 		9E23C9AA1AA1A9C20059305E /* Bird */ = {
 			isa = PBXGroup;
 			children = (
+				9E601DB41A9F38C800ECF036 /* BirdActions.swift */,
 				9E601DB31A9F38C800ECF036 /* Bird.swift */,
+				9E601DB51A9F38C800ECF036 /* BirdSprite.swift */,
+				9E23C9AD1AA1E1A70059305E /* BirdTextures.swift */,
 				9E601DBA1A9F38C800ECF036 /* Flock.swift */,
 			);
 			name = Bird;
-			sourceTree = "<group>";
-		};
-		9E23C9AB1AA1A9CF0059305E /* Sprites */ = {
-			isa = PBXGroup;
-			children = (
-				9E601DB51A9F38C800ECF036 /* BirdSprite.swift */,
-			);
-			name = Sprites;
-			sourceTree = "<group>";
-		};
-		9E23C9AC1AA1A9EA0059305E /* Actions */ = {
-			isa = PBXGroup;
-			children = (
-				9E601DB41A9F38C800ECF036 /* BirdActions.swift */,
-			);
-			name = Actions;
 			sourceTree = "<group>";
 		};
 		9E35B00F1A985CB100FFA9F7 = {
@@ -182,7 +171,6 @@
 		9E35B01A1A985CB100FFA9F7 /* HexWorld */ = {
 			isa = PBXGroup;
 			children = (
-				9E23C9AC1AA1A9EA0059305E /* Actions */,
 				9E23C9A51AA19C8B0059305E /* Background */,
 				9E23C9AA1AA1A9C20059305E /* Bird */,
 				9E23C9A81AA1A8AE0059305E /* Birds.atlas */,
@@ -195,7 +183,6 @@
 				9E601DC31A9F38D200ECF036 /* Main.storyboard */,
 				9E601DC61A9F38D200ECF036 /* SampleBesierView.swift */,
 				9E23C9A41AA19C810059305E /* Settings */,
-				9E23C9AB1AA1A9CF0059305E /* Sprites */,
 				9E601DC81A9F38D200ECF036 /* Steering.swift */,
 				9E35B01B1A985CB100FFA9F7 /* Supporting Files */,
 				9E35B0481A985F1E00FFA9F7 /* Texture.atlas */,
@@ -347,8 +334,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E601DEF1A9F3EBB00ECF036 /* TiledBackground.swift in Sources */,
-				9E601DD21A9F38D200ECF036 /* Textures.swift in Sources */,
+				9E601DEF1A9F3EBB00ECF036 /* Background.swift in Sources */,
+				9E601DD21A9F38D200ECF036 /* BackgroundTextures.swift in Sources */,
 				9E601DBF1A9F38C800ECF036 /* DebugControls.swift in Sources */,
 				9E601DBD1A9F38C800ECF036 /* BirdSprite.swift in Sources */,
 				9E601DD01A9F38D200ECF036 /* Settings.swift in Sources */,
@@ -361,6 +348,7 @@
 				9E601DD41A9F38D200ECF036 /* World.swift in Sources */,
 				9E35B01E1A985CB100FFA9F7 /* AppDelegate.swift in Sources */,
 				9E601DD31A9F38D200ECF036 /* Vector2D.swift in Sources */,
+				9E23C9AE1AA1E1A70059305E /* BirdTextures.swift in Sources */,
 				9E601DCD1A9F38D200ECF036 /* Point.swift in Sources */,
 				9E601DBC1A9F38C800ECF036 /* BirdActions.swift in Sources */,
 				9E601DED1A9F3D2E00ECF036 /* HexNode.swift in Sources */,

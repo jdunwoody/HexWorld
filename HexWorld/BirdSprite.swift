@@ -10,14 +10,8 @@ import SpriteKit
 
 class BirdSprite: SKSpriteNode {
     
-    var textures : Textures
-    var actions : BirdActions
-    
-    init(actions : BirdActions, textures : Textures) {
-        self.actions = actions
-        self.textures = textures
-      
-        super.init(texture: self.textures.initial, color: UIColor.clearColor(), size: self.textures.initial.size())
+    init(actions : BirdActions, textures : BirdTextures) {
+        super.init(texture: textures.avatar, color: UIColor.clearColor(), size: textures.avatar.size())
     }
     
     //    convenience init(texture: SKTexture!) {
