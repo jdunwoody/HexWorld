@@ -44,12 +44,11 @@ class Bird
     //        }
     //    }
     
-    init(world: World) {
+    init(world: World, textures: BirdTextures) {
         self.world = world
         self.steering = Steering(world: world)
-        let textures = BirdTextures()
         self.actions = BirdActions(textures: textures)
-        self.sprite = BirdSprite(actions : self.actions, textures : textures)
+        self.sprite = BirdSprite(actions: self.actions, textures: textures)
         //        self.origin = Vector2D()
         self.heading = Vector2D(x: 0, y: 1.0)
         //        self.debugForceLine = DebugForceLine()

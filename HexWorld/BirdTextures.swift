@@ -1,7 +1,4 @@
 //
-//  Textures.swift
-//  CrowControls
-//
 //  Created by James Dunwoody on 12/12/2014.
 //  Copyright (c) 2014 James Dunwoody. All rights reserved.
 //
@@ -9,24 +6,22 @@
 import SpriteKit
 
 class BirdTextures {
-    let avatar: SKTexture
-    let small: SKTexture
-    let medium: SKTexture
-    let large: SKTexture
-    
+    let initial: SKTexture
     let flap: [SKTexture]
     let cruise: [SKTexture]
+    let atlas: SKTextureAtlas
     
-    init() {
-        let atlas = SKTextureAtlas(named: "Birds.atlas")!
+    init(atlas: SKTextureAtlas) {
+        self.atlas = atlas
         
-        self.avatar = atlas.textureNamed("YellowTriangle.png")
-        self.small = SKTexture(imageNamed: "WhiteTriangle.png")
-        self.medium = SKTexture(imageNamed: "BlueTriangle.png")
-        self.large = SKTexture(imageNamed: "GreenTriangle.png")
+        self.initial = atlas.textureNamed("initial.png")
+        let flap1 = atlas.textureNamed("flap1.png")
+        let cruise1 = SKTexture(imageNamed: "cruise1.png")
+        let turn1 = SKTexture(imageNamed: "turn1.png")
+        let die1 = SKTexture(imageNamed: "die1.png")
         
-        self.flap = [self.avatar]
-        self.cruise = [self.avatar]
+        self.flap = [flap1]
+        self.cruise = [cruise1]
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import UIKit
 
 class GameScene: SKScene {
     var debugControls = DebugControls()
@@ -15,14 +16,12 @@ class GameScene: SKScene {
     var maxYTranslation = 200.0 as CGFloat
     var userControlEnabled = true
     var flyingAnimationEnabled = true
-    //    var oldTime: CFTimeInterval
     var background: Background
 
     required init?(coder: NSCoder) {
         world = World(bounds: CGRectZero)
         flock = Flock(world: world)
         world.flock = flock
-        //        oldTime = CFTimeInterval()
         background = Background()
 
         super.init(coder: coder)
@@ -31,13 +30,14 @@ class GameScene: SKScene {
     }
 
     override init(size: CGSize) {
+
         world = World(bounds: CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height))
         flock = Flock(world: world)
         world.flock = flock
-        //        oldTime = CFTimeInterval()
         background = Background()
-
         super.init(size: size)
+
+        backgroundColor = SKColor.whiteColor()
 
         world.bounds = CGRect(origin: CGPointZero, size: size)
 
@@ -45,6 +45,7 @@ class GameScene: SKScene {
 
         flock.configure(CGPoint(x: world.bounds.size.width / 2.0, y: world.bounds.size.height / 2.0), maxYTranslation : maxYTranslation)
         debugControls.position = CGPoint(x: world.bounds.size.width / 2.0, y: 0.0)
+    
     }
 
     func addChildren() {
@@ -71,9 +72,7 @@ class GameScene: SKScene {
         let elapsedTime:CGFloat = 100.0 //CGFloat(newTime - oldTime)
 
         world.update(elapsedTime)
-
-        //        oldTime = newTime
-    }
+ }
 
     func pannedLeft(percentage : CGFloat) {
         if userControlEnabled {

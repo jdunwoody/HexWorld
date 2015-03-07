@@ -19,7 +19,7 @@
                         <subviews>
                             <view opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAs-Hm-BN3" userLabel="ControlsView">
                                 <rect key="frame" x="0.0" y="400" width="600" height="200"/>
-                                <color key="backgroundColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="biR-U5-St7"/>
                                 </constraints>
