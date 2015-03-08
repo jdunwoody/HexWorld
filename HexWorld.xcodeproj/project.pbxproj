@@ -21,8 +21,8 @@
 		9E601DBB1A9F38C800ECF036 /* Bird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB31A9F38C800ECF036 /* Bird.swift */; };
 		9E601DBC1A9F38C800ECF036 /* BirdActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB41A9F38C800ECF036 /* BirdActions.swift */; };
 		9E601DBD1A9F38C800ECF036 /* BirdSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB51A9F38C800ECF036 /* BirdSprite.swift */; };
-		9E601DBF1A9F38C800ECF036 /* DebugControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB71A9F38C800ECF036 /* DebugControls.swift */; };
-		9E601DC01A9F38C800ECF036 /* DebugForceLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB81A9F38C800ECF036 /* DebugForceLine.swift */; };
+		9E601DBF1A9F38C800ECF036 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB71A9F38C800ECF036 /* Debug.swift */; };
+		9E601DC01A9F38C800ECF036 /* DebugForce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB81A9F38C800ECF036 /* DebugForce.swift */; };
 		9E601DC11A9F38C800ECF036 /* DebugSteering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DB91A9F38C800ECF036 /* DebugSteering.swift */; };
 		9E601DC21A9F38C800ECF036 /* Flock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DBA1A9F38C800ECF036 /* Flock.swift */; };
 		9E601DCC1A9F38D200ECF036 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E601DC31A9F38D200ECF036 /* Main.storyboard */; };
@@ -37,6 +37,10 @@
 		9E601DED1A9F3D2E00ECF036 /* HexNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DE81A9F3D2E00ECF036 /* HexNode.swift */; };
 		9E601DEF1A9F3EBB00ECF036 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DEE1A9F3EBB00ECF036 /* Background.swift */; };
 		9ED2EC021AA84E2300376D28 /* SparrowBird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9ED2EC011AA84E2300376D28 /* SparrowBird.atlas */; };
+		9EFD1D561AABC3F000012652 /* SettingsTableDelegateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD1D551AABC3F000012652 /* SettingsTableDelegateDataSource.swift */; };
+		9EFD1D581AABC9E400012652 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD1D571AABC9E400012652 /* Setting.swift */; };
+		9EFD1D5A1AAC0D3400012652 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD1D591AAC0D3400012652 /* SettingsTableViewController.swift */; };
+		9EFD1D5C1AAC1E1700012652 /* Force.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD1D5B1AAC1E1700012652 /* Force.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +72,8 @@
 		9E601DB31A9F38C800ECF036 /* Bird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bird.swift; sourceTree = "<group>"; };
 		9E601DB41A9F38C800ECF036 /* BirdActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdActions.swift; sourceTree = "<group>"; };
 		9E601DB51A9F38C800ECF036 /* BirdSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdSprite.swift; sourceTree = "<group>"; };
-		9E601DB71A9F38C800ECF036 /* DebugControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugControls.swift; sourceTree = "<group>"; };
-		9E601DB81A9F38C800ECF036 /* DebugForceLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugForceLine.swift; sourceTree = "<group>"; };
+		9E601DB71A9F38C800ECF036 /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+		9E601DB81A9F38C800ECF036 /* DebugForce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugForce.swift; sourceTree = "<group>"; };
 		9E601DB91A9F38C800ECF036 /* DebugSteering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugSteering.swift; sourceTree = "<group>"; };
 		9E601DBA1A9F38C800ECF036 /* Flock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flock.swift; sourceTree = "<group>"; };
 		9E601DC31A9F38D200ECF036 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +88,10 @@
 		9E601DE81A9F3D2E00ECF036 /* HexNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexNode.swift; sourceTree = "<group>"; };
 		9E601DEE1A9F3EBB00ECF036 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Background.swift; path = Background/Background.swift; sourceTree = "<group>"; };
 		9ED2EC011AA84E2300376D28 /* SparrowBird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SparrowBird.atlas; sourceTree = "<group>"; };
+		9EFD1D551AABC3F000012652 /* SettingsTableDelegateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableDelegateDataSource.swift; sourceTree = "<group>"; };
+		9EFD1D571AABC9E400012652 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		9EFD1D591AAC0D3400012652 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		9EFD1D5B1AAC1E1700012652 /* Force.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Force.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +116,9 @@
 			isa = PBXGroup;
 			children = (
 				9E601DC71A9F38D200ECF036 /* Settings.swift */,
+				9EFD1D551AABC3F000012652 /* SettingsTableDelegateDataSource.swift */,
+				9EFD1D571AABC9E400012652 /* Setting.swift */,
+				9EFD1D591AAC0D3400012652 /* SettingsTableViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -134,8 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				9E601DC61A9F38D200ECF036 /* SampleBesierView.swift */,
-				9E601DB71A9F38C800ECF036 /* DebugControls.swift */,
-				9E601DB81A9F38C800ECF036 /* DebugForceLine.swift */,
+				9E601DB71A9F38C800ECF036 /* Debug.swift */,
+				9E601DB81A9F38C800ECF036 /* DebugForce.swift */,
 				9E601DB91A9F38C800ECF036 /* DebugSteering.swift */,
 			);
 			name = Debug;
@@ -252,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				9E601DC81A9F38D200ECF036 /* Steering.swift */,
+				9EFD1D5B1AAC1E1700012652 /* Force.swift */,
 			);
 			name = Steering;
 			sourceTree = "<group>";
@@ -372,13 +384,15 @@
 			files = (
 				9E601DEF1A9F3EBB00ECF036 /* Background.swift in Sources */,
 				9E601DD21A9F38D200ECF036 /* BackgroundTextures.swift in Sources */,
-				9E601DBF1A9F38C800ECF036 /* DebugControls.swift in Sources */,
+				9E601DBF1A9F38C800ECF036 /* Debug.swift in Sources */,
 				9E601DBD1A9F38C800ECF036 /* BirdSprite.swift in Sources */,
 				9E601DD01A9F38D200ECF036 /* Settings.swift in Sources */,
+				9EFD1D5C1AAC1E1700012652 /* Force.swift in Sources */,
 				9E601DBB1A9F38C800ECF036 /* Bird.swift in Sources */,
+				9EFD1D581AABC9E400012652 /* Setting.swift in Sources */,
 				9E601DC11A9F38C800ECF036 /* DebugSteering.swift in Sources */,
 				9E35B0221A985CB100FFA9F7 /* GameScene.swift in Sources */,
-				9E601DC01A9F38C800ECF036 /* DebugForceLine.swift in Sources */,
+				9E601DC01A9F38C800ECF036 /* DebugForce.swift in Sources */,
 				9E601DCF1A9F38D200ECF036 /* SampleBesierView.swift in Sources */,
 				9E35B0241A985CB100FFA9F7 /* GameViewController.swift in Sources */,
 				9E601DD41A9F38D200ECF036 /* World.swift in Sources */,
@@ -390,6 +404,8 @@
 				9E601DED1A9F3D2E00ECF036 /* HexNode.swift in Sources */,
 				9E601DD11A9F38D200ECF036 /* Steering.swift in Sources */,
 				9E601DC21A9F38C800ECF036 /* Flock.swift in Sources */,
+				9EFD1D5A1AAC0D3400012652 /* SettingsTableViewController.swift in Sources */,
+				9EFD1D561AABC3F000012652 /* SettingsTableDelegateDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

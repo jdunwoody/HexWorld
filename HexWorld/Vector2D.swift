@@ -11,7 +11,8 @@ import SpriteKit
 //import vBasicOps
 import UIKit
 
-class Vector2D { //: DebugPrintable, Printable {
+class Vector2D: DebugPrintable, Printable
+{
     var x:CGFloat {
         get {
             return point.x
@@ -30,11 +31,11 @@ class Vector2D { //: DebugPrintable, Printable {
         }
     }
     
-     var point: CGPoint
+    var point: CGPoint
     
-     init(point: CGPoint) {
+    init(point: CGPoint) {
         self.point = point
-//        self.init(x: point.x, y: point.y)
+        //        self.init(x: point.x, y: point.y)
     }
     
     convenience init() {
@@ -45,7 +46,7 @@ class Vector2D { //: DebugPrintable, Printable {
     
     convenience init(x: CGFloat, y: CGFloat) {
         self.init(point: CGPoint(x: x, y: y))
-//        point = CGPoint(x: x, y: y)
+        //        point = CGPoint(x: x, y: y)
         
         //        self.x = x
         //        self.y = y
@@ -143,11 +144,35 @@ class Vector2D { //: DebugPrintable, Printable {
     //    }
     
     func customDescription() -> String {
-        return "(\(x),\(y))"
+        return "Custom: (\(x),\(y))"
+    }
+    
+    func summary() -> String
+    {
+        return customDescription()
     }
     
     var description: String {
-        return customDescription()
+        get {
+            return customDescription()
+        }
+    }
+
+    var debugDescription: String {
+        get {
+             return customDescription()
+        }
+    }
+
+    func debugQuickLookObject() -> AnyObject? {
+       return customDescription()
+//        
+//        UIGraphicsBeginImageContext(CGSizeMake(radius * 2.0, radius * 2.0))
+//        color.set()
+//        path.fill()
+//        let image = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        return image
     }
     
     //    override var description : String {

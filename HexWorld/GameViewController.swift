@@ -27,6 +27,8 @@ extension SKNode {
 
 class GameViewController: UIViewController {
     
+    let delegateDataSource: SettingsTableDelegateDataSource;
+    
     @IBOutlet var controlsPanGestureRegogniser: UIPanGestureRecognizer!
     //    @IBOutlet var verticalPanGestureRecogniser: UIPanGestureRecognizer!
     
@@ -38,6 +40,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var controlsView: UIView!
     
     required init(coder: NSCoder) {
+        self.delegateDataSource = SettingsTableDelegateDataSource()
+        
         //        self.bird = Bird()
         //        self.debugControls = DebugControls()
         super.init(coder: coder)
@@ -51,6 +55,17 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //        self.settingsTableView.dataSource = delegateDataSource
+        //        self.settingsTableView.delegate = delegateDataSource
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+//        self.settingsTableView.dataSource = delegateDataSource
+//        self.settingsTableView.delegate = delegateDataSource
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -160,5 +175,7 @@ class GameViewController: UIViewController {
     //        self.path = bezierPath.CGPath
     //
     //    }
+    
+    
 }
 

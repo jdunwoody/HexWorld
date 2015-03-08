@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "HexWorld.Force.calculate (HexWorld.Force)(HexWorld.Bird, neighbours : Swift.Array&lt;HexWorld.Bird&gt;, target : C.CGPoint) -&gt; ():Force.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(HexWorld.Vector2D)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HexWorld.Steering.(separationFunction (HexWorld.Steering) -&gt; () -&gt; (HexWorld.Bird, Swift.Array&lt;HexWorld.Bird&gt;, C.CGPoint) -&gt; HexWorld.Vector2D).(calculate #1) (HexWorld.Bird, Swift.Array&lt;HexWorld.Bird&gt;, C.CGPoint) -&gt; HexWorld.Vector2D:Steering.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

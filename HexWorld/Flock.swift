@@ -26,15 +26,10 @@ class Flock {
         birds = [
                 Bird(world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "AvatarBird.atlas"))),
         ]
-        
-        birds.append(Bird(world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
-        birds.append(Bird(world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
-        birds.append(Bird(world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
-        birds.append(Bird(world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
-        birds.append(Bird(world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
-        birds.append(Bird(world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
-        birds.append(Bird(world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
 
+        for(var i = 0; i < Settings.initialNumberOfBirds; i++) {
+            birds.append(Bird(world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
+        }
 
         lead = birds[0]
     }
@@ -66,7 +61,6 @@ class Flock {
 
     func configure(centre : CGPoint, maxYTranslation : CGFloat) {
         lead.configure(centre, maxYTranslation: maxYTranslation)
-        lead.steering.seekOn = false
 
         for bird in birds {
             if bird == lead {
@@ -80,7 +74,6 @@ class Flock {
 
             let birdOrigin = CGPoint(x: x, y: y)
             bird.configure(birdOrigin, maxYTranslation: maxYTranslation)
-            bird.steering.seekOn = true
         }
     }
 

@@ -34,3 +34,18 @@ class DebugSteering {
         sprite.alpha = 0.3
     }
 }
+
+
+//
+//    func updatePoint2(change :Vector2D)
+//    {
+//        self.point2 = Vector2D(x: point1.x + change.x, y: point1.y + 200.0 + change.y)
+//    }
+//
+//    func updatePath()
+//    {
+//        //        bezierPath.moveToPoint(point1.point)
+//        //        bezierPath.addCurveToPoint(point2.point, controlPoint1: controlPoint1.point, controlPoint2: controlPoint2.point)
+//        //        self.path = bezierPath.CGPath
+//        //        bezierPath.removeAllPoints()
+//    }

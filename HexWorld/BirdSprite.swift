@@ -12,6 +12,7 @@ class BirdSprite: SKSpriteNode {
     
     init(actions : BirdActions, textures : BirdTextures) {
         super.init(texture: textures.initial, color: UIColor.clearColor(), size: textures.initial.size())
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
     }
     
     //    convenience init(texture: SKTexture!) {
