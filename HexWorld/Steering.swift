@@ -19,11 +19,11 @@ class Steering
         self.world = world
 
         self.forces = [
-                Force(name: "wallAvoidance", multiplier: 1.0, enabled: true, calculator: wallAvoidanceFunction()),
+                Force(name: "wallAvoidance", multiplier: 1.0, enabled: false, calculator: wallAvoidanceFunction()),
                 Force(name: "obstacleAvoidance", multiplier: 1.0, enabled: false, calculator: obstacleAvoidanceFunction()),
-                Force(name: "separation", multiplier: 1.0, enabled: true, calculator: separationFunction()),
+                Force(name: "separation", multiplier: 1.0, enabled: false, calculator: separationFunction()),
                 Force(name: "seek", multiplier: 1.0, enabled: true, calculator: seekFunction()),
-                Force(name: "cohesion", multiplier: 1.0, enabled: true, calculator: cohesionFunction()),
+                Force(name: "cohesion", multiplier: 1.0, enabled: false, calculator: cohesionFunction()),
         ]
     }
 
@@ -32,7 +32,7 @@ class Steering
 
         for force in forces {
             if force.enabled {
-                force.calculate(subject, neighbours: neighbours, target: world.centre)
+                force.calculate(subject, neighbours: neighbours, target: flock.lead.sprite.position)
 
                 if (!accumulateForce(&steeringForceVector, forceToAdd: force.vector)) {
                     return steeringForceVector
@@ -41,46 +41,6 @@ class Steering
         }
         return steeringForceVector
     }
-
-//        if wallAvoidanceOn {
-//            //            force = calculateWallAvoidance(world.walls) * wallAvoidanceMultiplier
-//            //            if (!accumulateForce(, force))
-//            //            return m_vSteeringForce;
-//        }
-//
-//        if obstacleAvoidanceOn {
-//            //                force = calculateObstaceAvoidance(world.obstacles) * wallAvoidanceMultiplier
-//            //                if !accumulateForce(m_vSteeringForce, force) {
-//            //                return m_vSteeringForce;
-//        }
-//
-//        if separationOn {
-//            force = separation(subject, neighbours: neighbours) * separationMultiplier
-//            debug.force["separation"].force = force
-//
-//            if !accumulateForce(&steeringForce, forceToAdd: force) {
-//                return steeringForce
-//            }
-//        }
-//
-//        if seekOn {
-//            force = seek(subject, target: flock.lead.sprite.position)
-//            debug.force["seek"].force = force
-//
-//            if !accumulateForce(&steeringForce, forceToAdd: force) {
-//                return steeringForce
-//            }
-//        }
-//
-//        if cohesionOn {
-//            force = cohesion(subject, neighbours: neighbours) * separationMultiplier
-//            debug.force["cohesion"].force = force
-//
-//            if !accumulateForce(&steeringForce, forceToAdd: force) {
-//                return steeringForce
-//            }
-//        }
-
 
     func accumulateForce(inout runningTotal: Vector2D, forceToAdd: Vector2D) -> Bool {
         let maxForce: CGFloat = 10.0

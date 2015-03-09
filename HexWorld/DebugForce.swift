@@ -18,7 +18,7 @@ class DebugForce
     init(bird: Bird, force: Force, color: SKColor) {
         self.force = force
         self.bird = bird
-        label = SKLabelNode(text: "Text")
+        label = SKLabelNode(text: force.name)
         label.fontColor = color
         label.fontSize = 12.0
 
@@ -29,9 +29,9 @@ class DebugForce
     }
 
     func update() {
-        sprite.position = CGPoint(x: bird.sprite.position.x + 20.0, y: bird.sprite.position.y)
-        sprite.path = linePath(bird.sprite.position.x + force.vector.x, y: bird.sprite.position.y + force.vector.y)
-        label.position = CGPoint(x: bird.sprite.position.x + force.vector.x, y: bird.sprite.position.y + force.vector.y)
+        sprite.position = CGPoint(x: bird.sprite.position.x, y: bird.sprite.position.y)
+        sprite.path = linePath(force.vector.x, y: force.vector.y)
+        label.position = CGPoint(x: sprite.position.x, y: sprite.position.y)
     }
 
     private
