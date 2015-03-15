@@ -21,7 +21,7 @@ class Vector2D: DebugPrintable, Printable
             point.x = newValue
         }
     }
-    
+
     var y:CGFloat {
         get {
             return point.y
@@ -30,84 +30,89 @@ class Vector2D: DebugPrintable, Printable
             point.y = newValue
         }
     }
-    
+
     var point: CGPoint
-    
+
     init(point: CGPoint) {
         self.point = point
         //        self.init(x: point.x, y: point.y)
     }
-    
+
     convenience init() {
         self.init(point: CGPointZero)
         //        self.x = 0
         //        self.y = 0
     }
-    
+
     convenience init(x: CGFloat, y: CGFloat) {
         self.init(point: CGPoint(x: x, y: y))
         //        point = CGPoint(x: x, y: y)
-        
+
         //        self.x = x
         //        self.y = y
     }
-    
+
     //    var point:CGPoint {
     //        return CGPoint(x: x, y: y)
     //    }
-    
+
     var string:NSString {
         return "(\(x), \(y))"
     }
-    
+
     func rotate(degrees: CGFloat) -> Vector2D {
         return self
     }
-    
+
     var lengthSquared: CGFloat {
         return self.x * self.x + self.y * self.y
     }
-    
+
     var length: CGFloat {
         return sqrt(lengthSquared)
     }
-    
+
+    var prettyLength: String {
+        return "\(length)"
+//        return String(format: "%.8f", length)
+    }
+
     var normalized: Vector2D {
         let x = self.x / self.length
         let y = self.y / self.length
-        
+
         return Vector2D(x: x, y: y)
     }
-    
+
     var perpendicular: Vector2D {
         x = -y
         y = x
         return self
     }
-    
+
     func truncate(max: CGFloat) -> Vector2D {
         let len = length
-        
+
         if len > max {
             let angle = atan2(y, x)
             x = cos(angle) * max
             y = sin(angle) * max
         }
-        
+
         return self
     }
-    
+
     func update(newValue: Vector2D) -> Vector2D {
         x = newValue.x
         y = newValue.y
         return self
     }
-    
+
     //    func minus(other: Vector2D) -> Vector2D {
     //        return Vector2D(x: self.x - other.x, y: self.y - other.y)
     //    }
-    
-    
+
+
     //    var minus: Vector2D { (other: Vector2D): Vector2D {
     //
     //    }
@@ -115,8 +120,8 @@ class Vector2D: DebugPrintable, Printable
     //    {
     //    return (Vector2D){p1.x-p2.x, p1.y-p2.y};
     //    }
-    
-    
+
+
     //    func normalise(vector : Vector2D) -> Vector2D {
     //
     //        // Get the length (a.k.a. magnitude) of the vector
@@ -127,13 +132,13 @@ class Vector2D: DebugPrintable, Printable
     //
     //        return vector
     //    }
-    
+
     //    func debugQuickLookObject() -> NSString {
     //        return "hi"
     //    }
     //
-    
-    
+
+
     //    - (NSString*)description {
     //    return [NSString stringWithFormat:@"%@; x=%f, y=%f", [super description], _x, _y];
     //    }
@@ -142,16 +147,16 @@ class Vector2D: DebugPrintable, Printable
     //            return "(\(x),\(y))"
     //        }
     //    }
-    
+
     func customDescription() -> String {
         return "Custom: (\(x),\(y))"
     }
-    
+
     func summary() -> String
     {
         return customDescription()
     }
-    
+
     var description: String {
         get {
             return customDescription()
@@ -160,33 +165,33 @@ class Vector2D: DebugPrintable, Printable
 
     var debugDescription: String {
         get {
-             return customDescription()
+            return customDescription()
         }
     }
 
     func debugQuickLookObject() -> AnyObject? {
-       return customDescription()
-//        
-//        UIGraphicsBeginImageContext(CGSizeMake(radius * 2.0, radius * 2.0))
-//        color.set()
-//        path.fill()
-//        let image = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        return image
+        return customDescription()
+        //
+        //        UIGraphicsBeginImageContext(CGSizeMake(radius * 2.0, radius * 2.0))
+        //        color.set()
+        //        path.fill()
+        //        let image = UIGraphicsGetImageFromCurrentImageContext()
+        //        UIGraphicsEndImageContext()
+        //        return image
     }
-    
+
     //    override var description : String {
     //        return "**** PageContentViewController\npageIndex equals \(x) ****\n"
     //    }
-    
+
     //    override var debugDescription : String {
     //        return "---- PageContentViewController\npageIndex equals \(x) ----\n"
     //    }
-    
+
     //    class func description() -> String {
     //        return "(\(x),\(y))"
     //    }
-    
+
     //    func debugDescripton() -> NSString {
     //        return "Debug Description"
     //    }
@@ -241,9 +246,9 @@ func +(left: Vector2D, right: CGPoint) -> Vector2D {
 
 func +(left: Vector2D, right: Vector2D) -> Vector2D {
     left.x = left.x + right.x
-    
+
     left.y =  left.y + right.y
-    
+
     return left
 }
 

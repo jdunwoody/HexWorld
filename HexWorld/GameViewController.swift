@@ -38,8 +38,10 @@ class GameViewController: UIViewController {
     var controlPoint2 = Vector2D()
     //    var bird : Bird
     @IBOutlet weak var controlsView: UIView!
+    @IBOutlet weak var timeStepControl: UIStepper!
     
-    required init(coder: NSCoder) {
+    required init(coder: NSCoder)
+    {
         self.delegateDataSource = SettingsTableDelegateDataSource()
         
         //        self.bird = Bird()
@@ -49,13 +51,15 @@ class GameViewController: UIViewController {
         //        debugControls?.updateControls(Vector2D(x: 0.0, y: 200.0 ))
     }
     
-    @IBAction func configPressed(sender: AnyObject) {
+    @IBAction func configPressed(sender: AnyObject)
+    {
         performSegueWithIdentifier("showSettings", sender: self)
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        
+
         //        self.settingsTableView.dataSource = delegateDataSource
         //        self.settingsTableView.delegate = delegateDataSource
     }
@@ -65,15 +69,15 @@ class GameViewController: UIViewController {
         super.viewWillAppear(animated)
 //        self.settingsTableView.dataSource = delegateDataSource
 //        self.settingsTableView.delegate = delegateDataSource
-        
     }
     
-    override func viewWillLayoutSubviews() {
+    override func viewWillLayoutSubviews()
+    {
         super.viewWillLayoutSubviews()
         
         self.sceneRef = GameScene(size: self.view.frame.size)
         
-        //        self.sceneRef = GameScene.unarchiveFromFile("GameScene") as GameScene!
+        self.timeStepControl.addTarget(self, action: "timeStepChanged:", forControlEvents: .ValueChanged)
         
         //        self.debugControls?.updateControls(Vector2D(x: 0.0, y: 200.0 ))
         
@@ -96,7 +100,16 @@ class GameViewController: UIViewController {
         }
     }
     
-    @IBAction func panned(sender: AnyObject) {
+    func timeStepChanged(sender:UIStepper!)
+    {
+        if let scene = sceneRef {
+            scene.sceneStepAmount = max(sender.value, 0.0)
+            NSLog("amount \(scene.sceneStepAmount)")
+        }
+    }
+    
+    @IBAction func panned(sender: AnyObject)
+    {
         //        let velocity = controlsPanGestureRegogniser.velocityInView(self.controlsView);
         //        let translation = controlsPanGestureRegogniser.translationInView(self.controlsView)
         //

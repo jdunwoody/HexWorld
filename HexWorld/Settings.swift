@@ -45,10 +45,13 @@ class Settings {
 
     class var initialNumberOfBirds : Int {
         get {
-            if let numberOfBirds = NSUserDefaults.standardUserDefaults().objectForKey("number_of_birds_preference") as Int? {
-                return numberOfBirds
-            }
-            return 1
+            return 10
+//            let def = NSUserDefaults.standardUserDefaults()
+//            
+//            if let numberOfBirds = NSUserDefaults.standardUserDefaults().objectForKey("number_of_birds_preference") as Int? {
+//                return numberOfBirds
+//            }
+//            return 1
         }
 
     }

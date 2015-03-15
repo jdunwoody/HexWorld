@@ -144,7 +144,6 @@ class Bird
         }
     }
 
-
     //    func normalFlappingAnimation() -> SKAction {
     //        return flappingAnimation(0.5)
     //    }
