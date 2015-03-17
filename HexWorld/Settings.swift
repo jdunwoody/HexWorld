@@ -12,11 +12,10 @@ class Settings {
 
     let data: [Setting]
 
-    init()
-    {
+    init() {
         data = [
                 Setting(name: "flying_enabled_preference"),
-                Setting(name: "number_of_birds_preference") ,
+                Setting(name: "number_of_birds_preference"),
                 Setting(name: "show_walls_preference"),
                 Setting(name: "show_obstacles_preference"),
                 Setting(name: "show_steering_force_preference"),
@@ -25,8 +24,7 @@ class Settings {
         ]
     }
 
-    func size() -> Int
-    {
+    func size() -> Int {
         return data.count
     }
 
@@ -34,7 +32,7 @@ class Settings {
         return data[index]
     }
 
-    class var flyingEnabled : Bool {
+    class var flyingEnabled: Bool {
         get {
             if let flyingEnabled = NSUserDefaults.standardUserDefaults().objectForKey("flying_enabled_preference") as Bool? {
                 return flyingEnabled
@@ -43,7 +41,7 @@ class Settings {
         }
     }
 
-    class var initialNumberOfBirds : Int {
+    class var initialNumberOfBirds: Int {
         get {
             return 10
 //            let def = NSUserDefaults.standardUserDefaults()
@@ -56,7 +54,7 @@ class Settings {
 
     }
 
-    class var showWalls : Bool {
+    class var showWalls: Bool {
         get {
             if let showWalls = NSUserDefaults.standardUserDefaults().objectForKey("show_walls_preference") as Bool? {
                 return showWalls
@@ -66,7 +64,7 @@ class Settings {
         }
     }
 
-    class var showObstacles : Bool {
+    class var showObstacles: Bool {
         get {
             if let showObstacles = NSUserDefaults.standardUserDefaults().objectForKey("show_obstacles_preference") as Bool? {
                 return showObstacles
@@ -76,7 +74,7 @@ class Settings {
         }
     }
 
-    class var showSteeringForce : Bool {
+    class var showSteeringForce: Bool {
         get {
             if let showSteeringForce = NSUserDefaults.standardUserDefaults().objectForKey("show_steering_force_preference") as Bool? {
                 return showSteeringForce
@@ -86,7 +84,7 @@ class Settings {
         }
     }
 
-    class var showFeelers : Bool {
+    class var showFeelers: Bool {
         get {
             if let showFeelers = NSUserDefaults.standardUserDefaults().objectForKey("show_feelers_preference") as Bool? {
                 return showFeelers
@@ -96,7 +94,7 @@ class Settings {
         }
     }
 
-    class var showDetectionBox : Bool {
+    class var showDetectionBox: Bool {
         get {
             if let showDetectionBox = NSUserDefaults.standardUserDefaults().objectForKey("show_detection_box_preference") as Bool? {
                 return showDetectionBox

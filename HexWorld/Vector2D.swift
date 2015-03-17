@@ -8,12 +8,13 @@
 
 import Foundation
 import SpriteKit
+
 //import vBasicOps
+
 import UIKit
 
-class Vector2D: DebugPrintable, Printable
-{
-    var x:CGFloat {
+class Vector2D: DebugPrintable, Printable {
+    var x: CGFloat {
         get {
             return point.x
         }
@@ -22,7 +23,7 @@ class Vector2D: DebugPrintable, Printable
         }
     }
 
-    var y:CGFloat {
+    var y: CGFloat {
         get {
             return point.y
         }
@@ -56,7 +57,7 @@ class Vector2D: DebugPrintable, Printable
     //        return CGPoint(x: x, y: y)
     //    }
 
-    var string:NSString {
+    var string: NSString {
         return "(\(x), \(y))"
     }
 
@@ -152,8 +153,7 @@ class Vector2D: DebugPrintable, Printable
         return "Custom: (\(x),\(y))"
     }
 
-    func summary() -> String
-    {
+    func summary() -> String {
         return customDescription()
     }
 
@@ -247,12 +247,12 @@ func +(left: Vector2D, right: CGPoint) -> Vector2D {
 func +(left: Vector2D, right: Vector2D) -> Vector2D {
     left.x = left.x + right.x
 
-    left.y =  left.y + right.y
+    left.y = left.y + right.y
 
     return left
 }
 
-func += (left: Vector2D, right: CGFloat) -> Vector2D {
+func +=(left: Vector2D, right: CGFloat) -> Vector2D {
     left.x = left.x + right
     left.y = left.y + right
     return left
@@ -287,7 +287,7 @@ func *=(point: Vector2D, factor: CGFloat) -> Vector2D {
 }
 
 func *(point: Vector2D, factor: CGFloat) -> Vector2D {
-    return Vector2D(x: point.x * factor, y:point.y * factor)
+    return Vector2D(x: point.x * factor, y: point.y * factor)
 }
 
 func !=(left: Bird, right: Bird) -> Bool {

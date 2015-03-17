@@ -10,9 +10,9 @@ import UIKit
 import Spritekit
 
 class Background: NSObject {
-    var nodes:[HexNode]
+    var nodes: [HexNode]
     let textures = BackgroundTextures()
-    
+
     override init() {
         nodes = []
         //        var textureWidth = Int(textures.water.size().width)

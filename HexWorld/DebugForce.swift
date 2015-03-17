@@ -6,13 +6,12 @@
 import Foundation
 import SpriteKit
 
-class DebugForce
-{
+class DebugForce {
     let sprite: SKShapeNode
     let label: SKLabelNode
 
     let force: Force
-    let TIME_INTERVAL:CGFloat = 100.0
+    let TIME_INTERVAL: CGFloat = 100.0
     let bird: Bird
 
     init(bird: Bird, force: Force, color: SKColor) {

@@ -9,12 +9,11 @@
 import Foundation
 import SpriteKit
 
-class HexNode: SKSpriteNode
-{
-    init(texture : SKTexture) {
+class HexNode: SKSpriteNode {
+    init(texture: SKTexture) {
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("NSCoding not supported")
     }

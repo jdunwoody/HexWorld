@@ -10,16 +10,16 @@ class BirdTextures {
     let flap: [SKTexture]
     let cruise: [SKTexture]
     let atlas: SKTextureAtlas
-    
+
     init(atlas: SKTextureAtlas) {
         self.atlas = atlas
-        
+
         self.initial = atlas.textureNamed("initial.png")
         let flap1 = atlas.textureNamed("flap1.png")
         let cruise1 = SKTexture(imageNamed: "cruise1.png")
         let turn1 = SKTexture(imageNamed: "turn1.png")
         let die1 = SKTexture(imageNamed: "die1.png")
-        
+
         self.flap = [flap1]
         self.cruise = [cruise1]
     }

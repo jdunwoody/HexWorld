@@ -9,8 +9,7 @@
 import Foundation
 import SpriteKit
 
-class World
-{
+class World {
     var bounds: CGRect;
     let debugSteering = DebugSteering()
 //    var size = CGRect(x: 0.0, y: 0.0, width: 200.0, height: 200.0)
@@ -20,7 +19,7 @@ class World
     init(bounds: CGRect) {
         self.bounds = bounds;
     }
-    
+
     func update(timeElapsed: CGFloat) {
         flock!.update(timeElapsed)
 

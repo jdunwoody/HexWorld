@@ -10,8 +10,7 @@ import Foundation
 import SpriteKit
 import Accelerate
 
-class Steering
-{
+class Steering {
     let world: World
     var forces: [Force] = []
 
@@ -66,20 +65,22 @@ class Steering
     }
 
     func obstacleAvoidanceFunction() -> ((Bird, [Bird], CGPoint) -> Vector2D) {
-        func calculate(bird: Bird, neighbours : [Bird], target: CGPoint) -> (Vector2D) {
+        func calculate(bird: Bird, neighbours: [Bird], target: CGPoint) -> (Vector2D) {
             return Vector2D()
         }
+
         return calculate
     }
 
     func wallAvoidanceFunction() -> ((Bird, [Bird], CGPoint) -> Vector2D) {
-        func calculate(bird: Bird, neighbours : [Bird], target: CGPoint) -> (Vector2D) {
+        func calculate(bird: Bird, neighbours: [Bird], target: CGPoint) -> (Vector2D) {
             return Vector2D()
         }
+
         return calculate
     }
 
-    func separationFunction () -> ((Bird, [Bird], CGPoint) -> Vector2D) {
+    func separationFunction() -> ((Bird, [Bird], CGPoint) -> Vector2D) {
         func calculate(bird: Bird, neighbours: [Bird], target: CGPoint) -> (Vector2D) {
             var steeringForce = Vector2D()
 
@@ -100,6 +101,7 @@ class Steering
             }
             return steeringForce
         }
+
         return calculate
     }
 
@@ -107,15 +109,17 @@ class Steering
         func calculate(bird: Bird, neighbours: [Bird], target: CGPoint) -> Vector2D {
             return seekFunction()(bird, neighbours, world.centreOfMass())
         }
+
         return calculate
     }
 
-    func seekFunction () -> ((Bird, [Bird], CGPoint) -> Vector2D) {
-        func calculate(bird: Bird,  neighbours: [Bird], target: CGPoint) -> Vector2D {
+    func seekFunction() -> ((Bird, [Bird], CGPoint) -> Vector2D) {
+        func calculate(bird: Bird, neighbours: [Bird], target: CGPoint) -> Vector2D {
             let desiredVelocity: Vector2D = Vector2D(point: target) - Vector2D(point: bird.sprite.position)
 
             return desiredVelocity - bird.velocity
         }
+
         return calculate
     }
 
@@ -145,13 +149,15 @@ class Steering
             }
             return averageHeading
         }
+
         return calculate
     }
 
-    func cohesion () -> ((Bird, [Bird], CGPoint) -> Vector2D) {
+    func cohesion() -> ((Bird, [Bird], CGPoint) -> Vector2D) {
         func calculate(bird: Bird, neighbours: [Bird], target: CGPoint) -> Vector2D {
             return Vector2D()
         }
+
         return calculate
     }
 

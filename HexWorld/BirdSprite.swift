@@ -9,23 +9,23 @@
 import SpriteKit
 
 class BirdSprite: SKSpriteNode {
-    
-    init(actions : BirdActions, textures : BirdTextures) {
+
+    init(actions: BirdActions, textures: BirdTextures) {
         super.init(texture: textures.initial, color: UIColor.clearColor(), size: textures.initial.size())
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
     }
-    
+
     //    convenience init(texture: SKTexture!) {
     //        self.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
     //    }
-    
+
     //    override init(texture: SKTexture!, color: UIColor!, size: CGSize) {
     //        textures = Textures().birdTextures()
     //
     //        super.init(texture: texture, color: color, size: size)
     //
     //    }
-    
+
     required init?(coder: NSCoder) {
         fatalError("NSCoding not supported")
     }

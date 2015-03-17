@@ -10,11 +10,11 @@ import UIKit
 import SpriteKit
 
 extension SKNode {
-    class func unarchiveFromFile(file : NSString) -> SKNode? {
+    class func unarchiveFromFile(file: NSString) -> SKNode? {
         if let path = NSBundle.mainBundle().pathForResource(file, ofType: "sks") {
             var sceneData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!
             var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
-            
+
             archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
             let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as GameScene
             archiver.finishDecoding()
@@ -26,90 +26,83 @@ extension SKNode {
 }
 
 class GameViewController: UIViewController {
-    
+
     let delegateDataSource: SettingsTableDelegateDataSource;
-    
+
     @IBOutlet var controlsPanGestureRegogniser: UIPanGestureRecognizer!
     //    @IBOutlet var verticalPanGestureRecogniser: UIPanGestureRecognizer!
-    
-    var sceneRef : GameScene?
+
+    var sceneRef: GameScene?
     //    var debugControls : DebugControls? = nil
     //    var bezierPath = UIBezierPath()
     var controlPoint2 = Vector2D()
     //    var bird : Bird
     @IBOutlet weak var controlsView: UIView!
     @IBOutlet weak var timeStepControl: UIStepper!
-    
-    required init(coder: NSCoder)
-    {
+
+    required init(coder: NSCoder) {
         self.delegateDataSource = SettingsTableDelegateDataSource()
-        
+
         //        self.bird = Bird()
         //        self.debugControls = DebugControls()
         super.init(coder: coder)
-        
+
         //        debugControls?.updateControls(Vector2D(x: 0.0, y: 200.0 ))
     }
-    
-    @IBAction func configPressed(sender: AnyObject)
-    {
+
+    @IBAction func configPressed(sender: AnyObject) {
         performSegueWithIdentifier("showSettings", sender: self)
     }
-    
-    override func viewDidLoad()
-    {
+
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         //        self.settingsTableView.dataSource = delegateDataSource
         //        self.settingsTableView.delegate = delegateDataSource
     }
-    
-    override func viewWillAppear(animated: Bool)
-    {
+
+    override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 //        self.settingsTableView.dataSource = delegateDataSource
 //        self.settingsTableView.delegate = delegateDataSource
     }
-    
-    override func viewWillLayoutSubviews()
-    {
+
+    override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
+
         self.sceneRef = GameScene(size: self.view.frame.size)
-        
+
         self.timeStepControl.addTarget(self, action: "timeStepChanged:", forControlEvents: .ValueChanged)
-        
+
         //        self.debugControls?.updateControls(Vector2D(x: 0.0, y: 200.0 ))
-        
+
         if let scene = sceneRef {
-            scene.configure(view.center, maxYTranslation : self.controlsView.frame.height)
-            
+            scene.configure(view.center, maxYTranslation: self.controlsView.frame.height)
+
             let skView = self.view as SKView
             skView.showsFPS = true
             skView.showsNodeCount = true
-            
+
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = true
-            
+
             /* Set the scale mode to scale to fit the window */
             scene.scaleMode = .AspectFill
-            
+
             scene.size = skView.bounds.size;
-            
+
             skView.presentScene(scene)
         }
     }
-    
-    func timeStepChanged(sender:UIStepper!)
-    {
+
+    func timeStepChanged(sender: UIStepper!) {
         if let scene = sceneRef {
             scene.sceneStepAmount = max(sender.value, 0.0)
             NSLog("amount \(scene.sceneStepAmount)")
         }
     }
-    
-    @IBAction func panned(sender: AnyObject)
-    {
+
+    @IBAction func panned(sender: AnyObject) {
         //        let velocity = controlsPanGestureRegogniser.velocityInView(self.controlsView);
         //        let translation = controlsPanGestureRegogniser.translationInView(self.controlsView)
         //
@@ -153,11 +146,11 @@ class GameViewController: UIViewController {
         //            }
         //        }
     }
-    
+
     override func shouldAutorotate() -> Bool {
         return true
     }
-    
+
     override func supportedInterfaceOrientations() -> Int {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
             return Int(UIInterfaceOrientationMask.AllButUpsideDown.rawValue)
@@ -165,16 +158,16 @@ class GameViewController: UIViewController {
             return Int(UIInterfaceOrientationMask.All.rawValue)
         }
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
-    
+
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-    
+
     //    private
     //
     //    func drawCurve()
@@ -188,7 +181,7 @@ class GameViewController: UIViewController {
     //        self.path = bezierPath.CGPath
     //
     //    }
-    
-    
+
+
 }
 

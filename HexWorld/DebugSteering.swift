@@ -16,17 +16,17 @@ class DebugSteering {
 //        }
 //        return Singleton.instance
 //    }
-    
+
     var centreOfMass: CGPoint = CGPoint() {
         didSet {
             sprite.position = centreOfMass
         }
     }
     let sprite: SKShapeNode
-    
+
     init() {
         sprite = SKShapeNode(circleOfRadius: 10.0)
-        
+
         sprite.lineWidth = 1.0
         sprite.fillColor = SKColor.blueColor()
         sprite.strokeColor = SKColor.whiteColor()

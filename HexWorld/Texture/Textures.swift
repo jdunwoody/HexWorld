@@ -12,7 +12,7 @@ import SpriteKit
 class Textures {
     let water: SKTexture
     let grass: SKTexture
-    
+
     init() {
         let atlas = SKTextureAtlas(named: "Texture.atlas")!
         water = SKTexture(imageNamed: "Hex2dSmallWater.png")!

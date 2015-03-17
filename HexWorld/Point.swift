@@ -1,4 +1,3 @@
-
 //
 //  Point.swift
 //  CrowControls
@@ -11,14 +10,14 @@ import Foundation
 import SpriteKit
 
 extension CGPoint {
-    
+
 }
 
 func +(left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x + right.x, y: left.y + right.y);
 }
 
-func += (left: CGPoint, right: CGPoint) -> CGPoint {
+func +=(left: CGPoint, right: CGPoint) -> CGPoint {
     return left + right
 }
 

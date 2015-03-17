@@ -10,7 +10,7 @@ import SpriteKit
 
 class BirdActions: NSObject {
 
-    let textures : BirdTextures
+    let textures: BirdTextures
 
     init(textures: BirdTextures) {
         self.textures = textures
@@ -24,7 +24,7 @@ class BirdActions: NSObject {
         return SKAction.animateWithTextures(textures.cruise, timePerFrame: 0.1, resize: false, restore: true)
     }
 
-    func fly(ratePercentage : CGFloat) -> SKAction {
+    func fly(ratePercentage: CGFloat) -> SKAction {
         let flapCycle = SKAction.repeatAction(flap(), count: Int(10 * ratePercentage))
         let cruiseCycle = SKAction.repeatAction(cruise(), count: Int(10 * (1 - ratePercentage)))
 

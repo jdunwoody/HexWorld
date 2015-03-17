@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsTableDelegateDataSource : NSObject, UITableViewDelegate, UITableViewDataSource {
+class SettingsTableDelegateDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
 
     let settings: Settings
 

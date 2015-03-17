@@ -1,11 +1,3 @@
-//
-//  Flock.swift
-//  CrowControls
-//
-//  Created by James Dunwoody on 24/12/2014.
-//  Copyright (c) 2014 James Dunwoody. All rights reserved.
-//
-
 import Foundation
 import SpriteKit
 
@@ -14,7 +6,7 @@ class Flock {
     let lead: Bird
     var birds: [Bird]
 
-    var sprites : [SKSpriteNode] {
+    var sprites: [SKSpriteNode] {
         get {
             return birds.map {
                 $0.sprite
@@ -27,7 +19,7 @@ class Flock {
                 Bird(world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "AvatarBird.atlas"))),
         ]
 
-        for(var i = 0; i < Settings.initialNumberOfBirds; i++) {
+        for (var i = 0; i < Settings.initialNumberOfBirds; i++) {
             birds.append(Bird(world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
         }
 
@@ -44,7 +36,7 @@ class Flock {
     }
 
     func neighbours(subject: Bird) -> [Bird] {
-        var neighbours:[Bird] = []
+        var neighbours: [Bird] = []
 
         for bird in birds {
             if bird == subject {
@@ -59,7 +51,7 @@ class Flock {
         return neighbours
     }
 
-    func configure(centre : CGPoint, maxYTranslation : CGFloat) {
+    func configure(centre: CGPoint, maxYTranslation: CGFloat) {
         lead.configure(centre, maxYTranslation: maxYTranslation)
 
         for bird in birds {
@@ -77,14 +69,14 @@ class Flock {
         }
     }
 
-    func turningRight(percentage : CGFloat) {
+    func turningRight(percentage: CGFloat) {
         lead.turningRight(percentage)
         //        for bird in birds {
         //            bird.turningRight(percentage)
         //        }
     }
 
-    func turningLeft(percentage : CGFloat) {
+    func turningLeft(percentage: CGFloat) {
         lead.turningLeft(percentage)
         //        for bird in birds {
         //            bird.turningLeft(percentage)
@@ -105,14 +97,14 @@ class Flock {
         //        }
     }
 
-    func accelerate(percentage : CGFloat) {
+    func accelerate(percentage: CGFloat) {
         lead.accelerate(percentage)
         //        for bird in birds {
         //            bird.accelerate(percentage)
         //        }
     }
 
-    func decelerate(percentage : CGFloat) {
+    func decelerate(percentage: CGFloat) {
         lead.deccelerate(percentage)
         //        for bird in birds {
         //            bird.deccelerate(percentage)

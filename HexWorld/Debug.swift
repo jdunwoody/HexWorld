@@ -8,8 +8,7 @@
 
 import SpriteKit
 
-class Debug : SKShapeNode
-{
+class Debug: SKShapeNode {
     //    let bezierPath = UIBezierPath()
     //    var controlPoint1 :Vector2D
     //    var controlPoint2 :Vector2D
@@ -17,40 +16,36 @@ class Debug : SKShapeNode
     //    var point2 :Vector2D
     let bird: Bird
     let steering: Steering
-    
+
     let colours = [SKColor.blueColor(), SKColor.redColor(), SKColor.purpleColor(), SKColor.blackColor(), SKColor.greenColor(), SKColor.orangeColor(), SKColor.brownColor()]
     var currentColour = 0
-    
+
     var debugForces: [DebugForce]
-    
-    init(bird: Bird, steering: Steering)
-    {
+
+    init(bird: Bird, steering: Steering) {
         self.bird = bird
         self.steering = steering
         self.debugForces = []
-        
+
         super.init()
     }
-    
-    func nextColour() -> SKColor
-    {
+
+    func nextColour() -> SKColor {
         return colours[currentColour++ % colours.count]
     }
-    
-    func configure()
-    {
-        debugForces = steering.forces.map({force in DebugForce(bird: self.bird, force: force, color: self.nextColour())})
+
+    func configure() {
+        debugForces = steering.forces.map({ force in DebugForce(bird: self.bird, force: force, color: self.nextColour()) })
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("NSCoding not supported")
     }
-    
-    func update()
-    {
+
+    func update() {
         for debugForce in debugForces {
             debugForce.update()
         }
     }
-    
+
 }

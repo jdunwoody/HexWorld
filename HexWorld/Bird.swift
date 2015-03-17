@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 import SpriteKit
 
-class Bird
-{
+class Bird {
     var maxYTranslation = 0.0 as CGFloat
 
     let velocity: Vector2D
@@ -43,7 +42,7 @@ class Bird
         self.debug = nil
     }
 
-    func configure(origin : CGPoint, maxYTranslation : CGFloat) {
+    func configure(origin: CGPoint, maxYTranslation: CGFloat) {
         self.maxYTranslation = maxYTranslation
         self.sprite.position = origin
 
@@ -64,7 +63,7 @@ class Bird
         //        sprite.removeActionForKey("decelerating")
     }
 
-    func accelerate(percentage : CGFloat) {
+    func accelerate(percentage: CGFloat) {
         sprite.removeActionForKey("flying")
         let amount = world.centre.y - percentage * maxYTranslation
 
@@ -73,7 +72,7 @@ class Bird
         sprite.runAction(actions.fly(percentage), withKey: "flying")
     }
 
-    func deccelerate(percentage : CGFloat) {
+    func deccelerate(percentage: CGFloat) {
         sprite.removeActionForKey("flying")
         let amount = world.centre.y + percentage * maxYTranslation
         self.sprite.position.y = self.world.clipY(amount)
@@ -89,7 +88,7 @@ class Bird
         sprite.runAction(SKAction.rotateToAngle(0.0, duration: 0.2))
     }
 
-    func turningRight(percentage : CGFloat) {
+    func turningRight(percentage: CGFloat) {
         self.sprite.zRotation = -percentage * CGFloat(M_PI)
 
         //        straighten()
@@ -98,7 +97,7 @@ class Bird
         //        self.sprite.runAction(turningRight, withKey: "turningRight")
     }
 
-    func turningLeft(percentage : CGFloat) {
+    func turningLeft(percentage: CGFloat) {
         self.sprite.zRotation = CGFloat(percentage * CGFloat(M_PI))
 
         //        straighten()

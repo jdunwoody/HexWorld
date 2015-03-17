@@ -12,13 +12,11 @@ class Setting: NSObject {
 
     let name: NSString
 
-    init(name: NSString)
-    {
+    init(name: NSString) {
         self.name = name
     }
 
-    var enabled: Bool
-    {
+    var enabled: Bool {
         if let value = NSUserDefaults.standardUserDefaults().objectForKey(name) as Bool? {
             return value
         }

@@ -11,7 +11,7 @@ import SpriteKit
 class BackgroundTextures {
     let hardObstacle: SKTexture
     let decorativeObstacle: SKTexture
-    
+
     init() {
         hardObstacle = SKTexture(imageNamed: "BlackTriangle.png")!
         decorativeObstacle = SKTexture(imageNamed: "BlueTriangle.png")!
