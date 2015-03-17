@@ -20,11 +20,12 @@ class Flock: NSObject, SequenceType {
 
     init(world: World) {
         birds = [
-                Bird(name: "Lead", world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "AvatarBird.atlas"))),
+                Bird(name: "Lead", weight: 1.0, world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "AvatarBird.atlas"))),
         ]
 
         for (var i = 0; i < Settings.initialNumberOfBirds; i++) {
-            birds.append(Bird(name: "Bird\(i)", world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
+            let weight: Float = 0.2 * Float(i)
+            birds.append(Bird(name: "Bird\(i)", weight: weight, world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
         }
 
         lead = birds[0]

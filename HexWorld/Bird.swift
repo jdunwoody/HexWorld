@@ -27,9 +27,11 @@ class Bird {
     let world: World
     var debug: Debug?
     let name: String
+    let weight: Float
 
-    init(name: String, world: World, textures: BirdTextures) {
+    init(name: String, weight: Float, world: World, textures: BirdTextures) {
         self.name = name
+        self.weight = weight
         self.world = world
         self.steering = Steering(world: world)
         self.actions = BirdActions(textures: textures)

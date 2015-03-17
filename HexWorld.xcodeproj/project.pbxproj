@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		914CB008831666967F4032A3 /* BirdDetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914CB58C8998E91F7EF81FDF /* BirdDetailTableCell.swift */; };
 		914CB3C0D0C076BC3C042D8E /* BirdDetailsDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914CBE383FD9811F9DBF0246 /* BirdDetailsDataSourceDelegate.swift */; };
 		9E23C9A91AA1A8AE0059305E /* AvatarBird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9E23C9A81AA1A8AE0059305E /* AvatarBird.atlas */; };
 		9E23C9AE1AA1E1A70059305E /* BirdTextures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E23C9AD1AA1E1A70059305E /* BirdTextures.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		914CB58C8998E91F7EF81FDF /* BirdDetailTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdDetailTableCell.swift; sourceTree = "<group>"; };
 		914CBE383FD9811F9DBF0246 /* BirdDetailsDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdDetailsDataSourceDelegate.swift; sourceTree = "<group>"; };
 		9E23C9A81AA1A8AE0059305E /* AvatarBird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = AvatarBird.atlas; sourceTree = "<group>"; };
 		9E23C9AD1AA1E1A70059305E /* BirdTextures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdTextures.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				9EFD1D4F1AAAB66900012652 /* Steering */,
 				9EFD1D501AAAB67500012652 /* World */,
 				914CBE383FD9811F9DBF0246 /* BirdDetailsDataSourceDelegate.swift */,
+				914CB58C8998E91F7EF81FDF /* BirdDetailTableCell.swift */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				9EFD1D5A1AAC0D3400012652 /* SettingsTableViewController.swift in Sources */,
 				9EFD1D561AABC3F000012652 /* SettingsTableDelegateDataSource.swift in Sources */,
 				914CB3C0D0C076BC3C042D8E /* BirdDetailsDataSourceDelegate.swift in Sources */,
+				914CB008831666967F4032A3 /* BirdDetailTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
