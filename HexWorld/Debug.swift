@@ -14,7 +14,7 @@ class Debug: SKShapeNode {
     //    var controlPoint2 :Vector2D
     //    var point1 :Vector2D
     //    var point2 :Vector2D
-    let bird: Bird
+    var bird: Bird?
     let steering: Steering
 
     let colours = [SKColor.blueColor(), SKColor.redColor(), SKColor.purpleColor(), SKColor.blackColor(), SKColor.greenColor(), SKColor.orangeColor(), SKColor.brownColor()]
@@ -22,8 +22,7 @@ class Debug: SKShapeNode {
 
     var debugForces: [DebugForce]
 
-    init(bird: Bird, steering: Steering) {
-        self.bird = bird
+    init(steering: Steering) {
         self.steering = steering
         self.debugForces = []
 
@@ -34,8 +33,9 @@ class Debug: SKShapeNode {
         return colours[currentColour++ % colours.count]
     }
 
-    func configure() {
-        debugForces = steering.forces.map({ force in DebugForce(bird: self.bird, force: force, color: self.nextColour()) })
+    func configure(bird: Bird) {
+        self.bird = bird
+        debugForces = steering.forces.map({ force in DebugForce(bird: bird, force: force, color: self.nextColour()) })
     }
 
     required init?(coder: NSCoder) {

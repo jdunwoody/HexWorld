@@ -23,11 +23,23 @@
                                     <stepper contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="200" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="dUY-Hj-jFC">
                                         <rect key="frame" x="486" y="18" width="94" height="29"/>
                                     </stepper>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpj-Su-pjG" userLabel="Debug Label">
+                                        <rect key="frame" x="8" y="148" width="584" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="GcG-MF-Jzp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.78375860091743121" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="dUY-Hj-jFC" secondAttribute="trailing" constant="20" id="EJv-S4-J3R"/>
+                                    <constraint firstItem="Bpj-Su-pjG" firstAttribute="leading" secondItem="OAs-Hm-BN3" secondAttribute="leadingMargin" id="Ffi-Uu-0Ov"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Bpj-Su-pjG" secondAttribute="trailing" id="Z2e-Ay-WX5"/>
                                     <constraint firstAttribute="height" constant="200" id="biR-U5-St7"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Bpj-Su-pjG" secondAttribute="bottom" id="eFn-bc-dAl"/>
                                     <constraint firstItem="dUY-Hj-jFC" firstAttribute="top" secondItem="OAs-Hm-BN3" secondAttribute="top" constant="18" id="pC2-vH-mVD"/>
                                 </constraints>
                             </view>
@@ -92,6 +104,7 @@
                         <outlet property="birdDetailsTableView" destination="hiY-3h-onN" id="gMC-KR-584"/>
                         <outlet property="controlsPanGestureRegogniser" destination="Y5C-el-kWD" id="Lwr-q0-ePo"/>
                         <outlet property="controlsView" destination="OAs-Hm-BN3" id="7Im-iH-ESc"/>
+                        <outlet property="debugLabel" destination="Bpj-Su-pjG" id="dXT-Tm-riN"/>
                         <outlet property="timeStepControl" destination="dUY-Hj-jFC" id="hf6-iJ-7s1"/>
                         <segue destination="OTh-rU-wYy" kind="show" identifier="showSettings" id="z5b-It-hDD"/>
                     </connections>

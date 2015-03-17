@@ -36,7 +36,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var controlsView: UIView!
     @IBOutlet weak var timeStepControl: UIStepper!
     @IBOutlet weak var birdDetailsTableView: UITableView!
-    
+    @IBOutlet weak var debugLabel: UILabel!
+
     required init(coder: NSCoder) {
         self.delegateDataSource = SettingsTableDelegateDataSource()
         super.init(coder: coder)
@@ -48,8 +49,6 @@ class GameViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-//        self.settingsTableView.dataSource = delegateDataSource
-//        self.settingsTableView.delegate = delegateDataSource
     }
 
     override func viewWillLayoutSubviews() {
@@ -59,12 +58,19 @@ class GameViewController: UIViewController {
 
         self.timeStepControl.addTarget(self, action: "timeStepChanged:", forControlEvents: .ValueChanged)
 
-        //        self.debugControls?.updateControls(Vector2D(x: 0.0, y: 200.0 ))
-
         if let scene = sceneRef {
             self.birdDetailsDataSourceDelegate = BirdDetailsDataSourceDelegate(flock: scene.flock)
             self.birdDetailsTableView.dataSource = self.birdDetailsDataSourceDelegate!
             self.birdDetailsTableView.delegate = self.birdDetailsDataSourceDelegate!
+
+            self.debugLabel.text = ""
+
+            for debugForce: DebugForce in scene.flock.lead.debug.debugForces {
+                let text = self.debugLabel.text! as String
+                let name = debugForce.force.name as String
+                let newText = text + name
+                self.debugLabel.text = text + name
+            }
 
             scene.configure(view.center, maxYTranslation: self.controlsView.frame.height)
 

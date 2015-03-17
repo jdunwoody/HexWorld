@@ -20,9 +20,9 @@ class Steering {
         self.forces = [
                 Force(name: "wallAvoidance", multiplier: 1.0, enabled: false, calculator: wallAvoidanceFunction()),
                 Force(name: "obstacleAvoidance", multiplier: 1.0, enabled: false, calculator: obstacleAvoidanceFunction()),
-                Force(name: "separation", multiplier: 1.0, enabled: false, calculator: separationFunction()),
+                Force(name: "separation", multiplier: 1.0, enabled: true, calculator: separationFunction()),
                 Force(name: "seek", multiplier: 1.0, enabled: true, calculator: seekFunction()),
-                Force(name: "cohesion", multiplier: 1.0, enabled: false, calculator: cohesionFunction()),
+                Force(name: "cohesion", multiplier: 1.0, enabled: true, calculator: cohesionFunction()),
         ]
     }
 
@@ -42,22 +42,19 @@ class Steering {
     }
 
     func accumulateForce(inout runningTotal: Vector2D, forceToAdd: Vector2D) -> Bool {
-        let maxForce: CGFloat = 10.0
+        let maxForce: CGFloat = 5.0
 
         var magnitudeSoFar = runningTotal.length
-        //calculate how much steering force remains to be used by this vehicle
         var magnitudeRemaining = maxForce - magnitudeSoFar
-        //return false if there is no more force left to use
+
         if magnitudeRemaining <= 0.0 {
             return false
         }
-        //calculate the magnitude of the force we want to add
         var magnitudeToAdd = forceToAdd.length
 
         if magnitudeToAdd < magnitudeRemaining {
             runningTotal += forceToAdd;
         } else {
-            //add it to the steering force
             runningTotal += forceToAdd.normalized * magnitudeRemaining
         }
 

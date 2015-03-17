@@ -1,11 +1,3 @@
-//
-//  Bird.swift
-//  CrowControls
-//
-//  Created by James Dunwoody on 16/12/2014.
-//  Copyright (c) 2014 James Dunwoody. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import SpriteKit
@@ -25,7 +17,7 @@ class Bird {
     let actions: BirdActions
     let sprite: BirdSprite
     let world: World
-    var debug: Debug?
+    let debug: Debug
     let name: String
     let weight: Float
 
@@ -43,15 +35,13 @@ class Bird {
         self.maxSpeed = 10.0
         self.maxForce = 10.0
         self.maxTurnRate = 10.0
-        self.debug = nil
+        self.debug = Debug(steering: steering)
     }
 
     func configure(origin: CGPoint, maxYTranslation: CGFloat) {
+        self.debug.configure(self)
         self.maxYTranslation = maxYTranslation
         self.sprite.position = origin
-
-        self.debug = Debug(bird: self, steering: steering)
-        self.debug!.configure()
     }
 
     //    func fly()
@@ -142,9 +132,7 @@ class Bird {
             side.update(heading.perpendicular)
         }
 
-        if let d = self.debug {
-            d.update()
-        }
+        self.debug.update()
     }
 
     //    func normalFlappingAnimation() -> SKAction {

@@ -13,10 +13,12 @@ class DebugForce {
     let force: Force
     let TIME_INTERVAL: CGFloat = 100.0
     let bird: Bird
+    let colour: SKColor
 
     init(bird: Bird, force: Force, color: SKColor) {
         self.force = force
         self.bird = bird
+        self.colour = color
         label = SKLabelNode(text: "\(force.name) 0.0")
         label.fontColor = color
         label.fontSize = 12.0

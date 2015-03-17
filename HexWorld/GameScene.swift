@@ -48,7 +48,7 @@ class GameScene: SKScene {
         for bird in flock.birds {
             addChild(bird.sprite)
 
-            for debugForce in bird.debug!.debugForces {
+            for debugForce in bird.debug.debugForces {
                 debugForce.sprite.position = bird.sprite.position
                 addChild(debugForce.sprite)
                 addChild(debugForce.label)
