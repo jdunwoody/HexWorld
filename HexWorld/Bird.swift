@@ -26,8 +26,10 @@ class Bird {
     let sprite: BirdSprite
     let world: World
     var debug: Debug?
+    let name: String
 
-    init(world: World, textures: BirdTextures) {
+    init(name: String, world: World, textures: BirdTextures) {
+        self.name = name
         self.world = world
         self.steering = Steering(world: world)
         self.actions = BirdActions(textures: textures)

@@ -28,37 +28,22 @@ extension SKNode {
 class GameViewController: UIViewController {
 
     let delegateDataSource: SettingsTableDelegateDataSource;
-
-    @IBOutlet var controlsPanGestureRegogniser: UIPanGestureRecognizer!
-    //    @IBOutlet var verticalPanGestureRecogniser: UIPanGestureRecognizer!
-
     var sceneRef: GameScene?
-    //    var debugControls : DebugControls? = nil
-    //    var bezierPath = UIBezierPath()
     var controlPoint2 = Vector2D()
-    //    var bird : Bird
+    var birdDetailsDataSourceDelegate: BirdDetailsDataSourceDelegate?
+
+    @IBOutlet weak var controlsPanGestureRegogniser: UIPanGestureRecognizer!
     @IBOutlet weak var controlsView: UIView!
     @IBOutlet weak var timeStepControl: UIStepper!
-
+    @IBOutlet weak var birdDetailsTableView: UITableView!
+    
     required init(coder: NSCoder) {
         self.delegateDataSource = SettingsTableDelegateDataSource()
-
-        //        self.bird = Bird()
-        //        self.debugControls = DebugControls()
         super.init(coder: coder)
-
-        //        debugControls?.updateControls(Vector2D(x: 0.0, y: 200.0 ))
     }
 
     @IBAction func configPressed(sender: AnyObject) {
         performSegueWithIdentifier("showSettings", sender: self)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        //        self.settingsTableView.dataSource = delegateDataSource
-        //        self.settingsTableView.delegate = delegateDataSource
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -77,6 +62,10 @@ class GameViewController: UIViewController {
         //        self.debugControls?.updateControls(Vector2D(x: 0.0, y: 200.0 ))
 
         if let scene = sceneRef {
+            self.birdDetailsDataSourceDelegate = BirdDetailsDataSourceDelegate(flock: scene.flock)
+            self.birdDetailsTableView.dataSource = self.birdDetailsDataSourceDelegate!
+            self.birdDetailsTableView.delegate = self.birdDetailsDataSourceDelegate!
+
             scene.configure(view.center, maxYTranslation: self.controlsView.frame.height)
 
             let skView = self.view as SKView

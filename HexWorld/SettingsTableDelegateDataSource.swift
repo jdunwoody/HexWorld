@@ -37,4 +37,5 @@ class SettingsTableDelegateDataSource: NSObject, UITableViewDelegate, UITableVie
 
         return cell
     }
+
 }

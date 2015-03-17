@@ -17,15 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxJ-Mh-fmS">
-                                <rect key="frame" x="20" y="24" width="45" height="30"/>
-                                <state key="normal" title="Config">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="configPressed:" destination="BV1-FR-VrT" eventType="touchUpInside" id="cxg-zn-56T"/>
-                                </connections>
-                            </button>
                             <view opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAs-Hm-BN3" userLabel="ControlsView">
                                 <rect key="frame" x="0.0" y="400" width="600" height="200"/>
                                 <subviews>
@@ -40,21 +31,39 @@
                                     <constraint firstItem="dUY-Hj-jFC" firstAttribute="top" secondItem="OAs-Hm-BN3" secondAttribute="top" constant="18" id="pC2-vH-mVD"/>
                                 </constraints>
                             </view>
+                            <tableView opaque="NO" clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hiY-3h-onN">
+                                <rect key="frame" x="0.0" y="20" width="100" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="J5E-1t-Kgf"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BirdDetailsCell" id="4ed-HQ-Gc7">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4ed-HQ-Gc7" id="qyp-nC-1rN">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.95062756540000004" green="0.95081013439999995" blue="0.95059704779999998" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="hiY-3h-onN" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="54c-IS-dGd"/>
                             <constraint firstItem="OAs-Hm-BN3" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" id="DgU-8c-1AK"/>
+                            <constraint firstItem="hiY-3h-onN" firstAttribute="top" secondItem="maK-i9-Uhn" secondAttribute="bottom" id="S3C-J8-9H2"/>
+                            <constraint firstItem="khH-OB-KpY" firstAttribute="top" secondItem="hiY-3h-onN" secondAttribute="bottom" id="bGK-1i-0uQ"/>
                             <constraint firstAttribute="bottom" secondItem="OAs-Hm-BN3" secondAttribute="bottom" id="evy-38-9Z9"/>
-                            <constraint firstItem="kxJ-Mh-fmS" firstAttribute="top" secondItem="maK-i9-Uhn" secondAttribute="bottom" constant="4" id="gbN-pe-H5G"/>
                             <constraint firstAttribute="trailing" secondItem="OAs-Hm-BN3" secondAttribute="trailing" id="l9i-YC-7Nt"/>
-                            <constraint firstItem="kxJ-Mh-fmS" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leadingMargin" constant="4" id="ybg-HX-IUs"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Y5C-el-kWD" appends="YES" id="w27-6q-4GI"/>
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="birdDetailsTableView" destination="hiY-3h-onN" id="gMC-KR-584"/>
                         <outlet property="controlsPanGestureRegogniser" destination="Y5C-el-kWD" id="Lwr-q0-ePo"/>
                         <outlet property="controlsView" destination="OAs-Hm-BN3" id="7Im-iH-ESc"/>
                         <outlet property="timeStepControl" destination="dUY-Hj-jFC" id="hf6-iJ-7s1"/>

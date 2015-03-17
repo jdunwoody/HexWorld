@@ -1,10 +1,14 @@
 import Foundation
 import SpriteKit
 
-class Flock {
+class Flock: NSObject, SequenceType {
 
     let lead: Bird
     var birds: [Bird]
+
+//    init(_ enumerator: NSEnumerator) {
+//        self.enumerator = enumerator
+//    }
 
     var sprites: [SKSpriteNode] {
         get {
@@ -16,14 +20,24 @@ class Flock {
 
     init(world: World) {
         birds = [
-                Bird(world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "AvatarBird.atlas"))),
+                Bird(name: "Lead", world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "AvatarBird.atlas"))),
         ]
 
         for (var i = 0; i < Settings.initialNumberOfBirds; i++) {
-            birds.append(Bird(world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
+            birds.append(Bird(name: "Bird\(i)", world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
         }
 
         lead = birds[0]
+    }
+
+    subscript(index: Int) -> Bird {
+        return birds[index]
+    }
+
+    var size: Int {
+        get {
+            return self.birds.count
+        }
     }
 
     func update(timeElapsed: CGFloat) {
@@ -123,6 +137,32 @@ class Flock {
             }
         }
     }
+
+//    func next() -> Bird? {
+//        return self.birds.generate()
+//    }
+//
+//    func generate() -> GeneratorOf<Bird> {
+//        return self.birds.generate()
+//    }
+
+//    private var cars = [Car]()
+
+    func generate() -> GeneratorOf<Bird> {
+        // keep the index of the next car in the iteration
+        var nextIndex = self.birds.count - 1
+
+        // Construct a GeneratorOf<Car> instance,
+        // passing a closure that returns the next
+        // car in the iteration
+        return GeneratorOf<Bird> {
+            if (nextIndex < 0) {
+                return nil
+            }
+            return self.birds[nextIndex--]
+        }
+    }
+
 }
 
 func ==(left: Bird, right: Bird) -> Bool {
