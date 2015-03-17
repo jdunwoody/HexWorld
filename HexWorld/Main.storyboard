@@ -38,20 +38,20 @@
                                     <constraint firstAttribute="width" constant="100" id="J5E-1t-Kgf"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BirdDetailsCell" id="4ed-HQ-Gc7" customClass="BirdDetailTableCell" customModule="HexWorld" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BirdDetailsCell" rowHeight="22" id="4ed-HQ-Gc7" customClass="BirdDetailTableCell" customModule="HexWorld" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4ed-HQ-Gc7" id="qyp-nC-1rN">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyW-6h-4DA" userLabel="Name">
-                                                    <rect key="frame" x="8" y="14" width="30.5" height="14.5"/>
+                                                    <rect key="frame" x="8" y="4" width="30.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFX-fm-3dm" userLabel="Weight">
-                                                    <rect key="frame" x="46.5" y="15" width="30.5" height="14.5"/>
+                                                    <rect key="frame" x="46" y="4" width="30.5" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                                                 <constraint firstAttribute="centerY" secondItem="rFX-fm-3dm" secondAttribute="centerY" id="umn-Db-iKU"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="0.98893415288214837" blue="0.18883712192420121" alpha="0.51000000000000001" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="RyW-6h-4DA" id="2RQ-hK-Msy"/>
                                             <outlet property="weightLabel" destination="rFX-fm-3dm" id="ewx-Kx-pe9"/>
