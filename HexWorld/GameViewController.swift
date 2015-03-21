@@ -47,6 +47,10 @@ class GameViewController: UIViewController {
         performSegueWithIdentifier("showSettings", sender: self)
     }
 
+    @IBAction func settingsPressed(sender: AnyObject) {
+          UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -59,6 +63,8 @@ class GameViewController: UIViewController {
         self.timeStepControl.addTarget(self, action: "timeStepChanged:", forControlEvents: .ValueChanged)
 
         if let scene = sceneRef {
+            self.timeStepControl.value = scene.sceneStepAmount
+            
             self.birdDetailsDataSourceDelegate = BirdDetailsDataSourceDelegate(flock: scene.flock)
             self.birdDetailsTableView.dataSource = self.birdDetailsDataSourceDelegate!
             self.birdDetailsTableView.delegate = self.birdDetailsDataSourceDelegate!

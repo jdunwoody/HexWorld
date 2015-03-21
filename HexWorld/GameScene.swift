@@ -18,30 +18,22 @@ class GameScene: SKScene {
     var background: Background
     var sceneStepAmount: Double
 
-    required init?(coder: NSCoder) {
-        world = World(bounds: CGRectZero)
-        flock = Flock(world: world)
-        world.flock = flock
-        background = Background()
-        sceneStepAmount = 0
-
-        super.init(coder: coder)
-
-        addChildren()
-    }
-
     override init(size: CGSize) {
         world = World(bounds: CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height))
         flock = Flock(world: world)
         world.flock = flock
         background = Background()
-        sceneStepAmount = 0
+        sceneStepAmount = 45.0
 
         super.init(size: size)
 
         backgroundColor = SKColor.whiteColor()
 
         world.bounds = CGRect(origin: CGPointZero, size: size)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     func addChildren() {
