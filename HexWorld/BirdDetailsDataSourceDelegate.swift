@@ -29,7 +29,7 @@ class BirdDetailsDataSourceDelegate: NSObject, UITableViewDelegate, UITableViewD
         let birdDetailTableCell = cell as BirdDetailTableCell
 
         birdDetailTableCell.nameLabel!.text = flock[indexPath.row].name
-        birdDetailTableCell.weightLabel!.text = "\(flock[indexPath.row].weight)"
+//        birdDetailTableCell.weightLabel!.text = "\(flock[indexPath.row].weight)"
 //        let label = cell.viewWithTag(100) as UILabel
 //        let switchControl = cell.viewWithTag(101) as UISwitch
 //

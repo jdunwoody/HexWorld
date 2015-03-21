@@ -38,6 +38,7 @@
 		9E601DD41A9F38D200ECF036 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DCB1A9F38D200ECF036 /* World.swift */; };
 		9E601DED1A9F3D2E00ECF036 /* HexNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DE81A9F3D2E00ECF036 /* HexNode.swift */; };
 		9E601DEF1A9F3EBB00ECF036 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DEE1A9F3EBB00ECF036 /* Background.swift */; };
+		9E9114ED1ABD1F3D008ADB75 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E9114EC1ABD1F3D008ADB75 /* Settings.bundle */; };
 		9ED2EC021AA84E2300376D28 /* SparrowBird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9ED2EC011AA84E2300376D28 /* SparrowBird.atlas */; };
 		9EFD1D561AABC3F000012652 /* SettingsTableDelegateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD1D551AABC3F000012652 /* SettingsTableDelegateDataSource.swift */; };
 		9EFD1D581AABC9E400012652 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD1D571AABC9E400012652 /* Setting.swift */; };
@@ -91,6 +92,7 @@
 		9E601DCB1A9F38D200ECF036 /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		9E601DE81A9F3D2E00ECF036 /* HexNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexNode.swift; sourceTree = "<group>"; };
 		9E601DEE1A9F3EBB00ECF036 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Background.swift; path = Background/Background.swift; sourceTree = "<group>"; };
+		9E9114EC1ABD1F3D008ADB75 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9ED2EC011AA84E2300376D28 /* SparrowBird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SparrowBird.atlas; sourceTree = "<group>"; };
 		9EFD1D551AABC3F000012652 /* SettingsTableDelegateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableDelegateDataSource.swift; sourceTree = "<group>"; };
 		9EFD1D571AABC9E400012652 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		9E35B00F1A985CB100FFA9F7 = {
 			isa = PBXGroup;
 			children = (
+				9E9114EC1ABD1F3D008ADB75 /* Settings.bundle */,
 				9E35B01A1A985CB100FFA9F7 /* HexWorld */,
 				9E35B0341A985CB100FFA9F7 /* HexWorldTests */,
 				9E35B0191A985CB100FFA9F7 /* Products */,
@@ -364,6 +367,7 @@
 			files = (
 				9E35B02C1A985CB100FFA9F7 /* LaunchScreen.xib in Resources */,
 				9E35B0291A985CB100FFA9F7 /* Images.xcassets in Resources */,
+				9E9114ED1ABD1F3D008ADB75 /* Settings.bundle in Resources */,
 				9E23C9A91AA1A8AE0059305E /* AvatarBird.atlas in Resources */,
 				9E601DCE1A9F38D200ECF036 /* Root.plist in Resources */,
 				9E35B0201A985CB100FFA9F7 /* GameScene.sks in Resources */,

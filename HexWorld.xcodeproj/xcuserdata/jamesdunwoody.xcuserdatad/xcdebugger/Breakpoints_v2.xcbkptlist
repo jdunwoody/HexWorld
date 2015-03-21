@@ -228,11 +228,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HexWorld/Steering.swift"
-            timestampString = "447498652.303681"
+            timestampString = "448590433.056187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "calculate(_:neighbours:flock:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -244,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HexWorld/Steering.swift"
-            timestampString = "447554271.554804"
+            timestampString = "448590433.056187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "accumulateForce(_:forceToAdd:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -260,11 +260,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HexWorld/Steering.swift"
-            timestampString = "447554271.554804"
+            timestampString = "448590433.056187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "calculate(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -276,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HexWorld/Steering.swift"
-            timestampString = "447554271.554804"
+            timestampString = "448590433.056187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "calculate(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -292,13 +292,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HexWorld/Steering.swift"
-            timestampString = "447554271.554804"
+            timestampString = "448590433.056187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "calculate(_:_:_:)"
-            landmarkType = "7">
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "Steering"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -308,11 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HexWorld/Vector2D.swift"
-            timestampString = "447500183.093419"
+            timestampString = "448587027.181013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
             landmarkName = "Vector2D"
             landmarkType = "3">
          </BreakpointContent>
@@ -324,11 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HexWorld/Vector2D.swift"
-            timestampString = "447500109.072545"
+            timestampString = "448587027.181013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "Vector2D"
             landmarkType = "3">
          </BreakpointContent>
@@ -344,9 +344,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "calculate(_:neighbours:target:)"
-            landmarkType = "5">
+            endingLineNumber = "31">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -356,11 +354,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HexWorld/Vector2D.swift"
-            timestampString = "447500183.093419"
+            timestampString = "448587027.181013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "Vector2D"
             landmarkType = "3">
             <Locations>
@@ -371,11 +369,11 @@
                   symbolName = "HexWorld.Vector2D.debugDescription.getter : Swift.String"
                   moduleName = "HexWorld"
                   urlString = "file:///Users/jamesdunwoody/Programming/Mine/HexWorld/HexWorld/Vector2D.swift"
-                  timestampString = "448285238.957025"
+                  timestampString = "448601989.874941"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "168"
-                  endingLineNumber = "168"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
@@ -385,11 +383,11 @@
                   symbolName = "protocol witness for Swift.DebugPrintable.debugDescription.getter : Swift.String in conformance HexWorld.Vector2D : Swift.DebugPrintable"
                   moduleName = "HexWorld"
                   urlString = "file:///Users/jamesdunwoody/Programming/Mine/HexWorld/HexWorld/Vector2D.swift"
-                  timestampString = "448285238.957119"
+                  timestampString = "448601989.875119"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "167"
-                  endingLineNumber = "167"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
                   offsetFromSymbolStart = "4">
                </Location>
             </Locations>
@@ -402,11 +400,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HexWorld/Vector2D.swift"
-            timestampString = "447500183.093419"
+            timestampString = "448587027.181013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "summary()"
             landmarkType = "5">
          </BreakpointContent>
@@ -418,11 +416,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HexWorld/Vector2D.swift"
-            timestampString = "447500361.351773"
+            timestampString = "448587027.181013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "customDescription()"
             landmarkType = "5">
          </BreakpointContent>
@@ -434,11 +432,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HexWorld/Steering.swift"
-            timestampString = "447500790.624257"
+            timestampString = "448590433.056187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "calculate(_:neighbours:flock:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -503,8 +501,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "DebugForce"
-            landmarkType = "3">
+            landmarkName = "init(bird:force:color:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -514,11 +512,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HexWorld/Steering.swift"
-            timestampString = "447554440.393884"
+            timestampString = "448590433.056187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "calculate(_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -530,11 +528,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HexWorld/Steering.swift"
-            timestampString = "447554692.713899"
+            timestampString = "448590433.056187"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "calculate(_:neighbours:flock:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -585,6 +583,54 @@
             endingLineNumber = "68"
             landmarkName = "viewWillLayoutSubviews()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HexWorld/Vector2D.swift"
+            timestampString = "448586365.244045"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "Vector2D"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HexWorld/Flock.swift"
+            timestampString = "448590493.500018"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "logPosition()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HexWorld/Steering.swift"
+            timestampString = "448592042.040115"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "calculate(_:_:_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -24,13 +24,21 @@ class Flock: NSObject, SequenceType {
         ]
 
         for (var i = 0; i < Settings.initialNumberOfBirds; i++) {
-            let weight: Float = 0.2 * Float(i)
+            let weight: CGFloat = 0.2 * CGFloat(i)
             birds.append(Bird(name: "Bird\(i)", weight: weight, world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
         }
 
         lead = birds[0]
     }
 
+    func logPosition() {
+        NSLog("Flock position")
+        
+        for bird: Bird in birds {
+            NSLog("\(bird.sprite.position)")
+        }
+    }
+    
     subscript(index: Int) -> Bird {
         return birds[index]
     }

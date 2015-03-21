@@ -75,7 +75,6 @@ class Vector2D: DebugPrintable, Printable {
 
     var prettyLength: String {
         return "\(length)"
-//        return String(format: "%.8f", length)
     }
 
     var normalized: Vector2D {

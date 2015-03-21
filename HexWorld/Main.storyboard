@@ -57,13 +57,11 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyW-6h-4DA" userLabel="Name">
-                                                    <rect key="frame" x="8" y="4" width="30.5" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFX-fm-3dm" userLabel="Weight">
-                                                    <rect key="frame" x="46" y="4" width="30.5" height="14.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="30.5" height="14.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30.5" id="9VH-wK-Ya7"/>
+                                                        <constraint firstAttribute="height" constant="14.5" id="WM8-0y-Do4"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -72,15 +70,20 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="RyW-6h-4DA" firstAttribute="leading" secondItem="qyp-nC-1rN" secondAttribute="leadingMargin" id="FPt-Km-C30"/>
-                                                <constraint firstItem="rFX-fm-3dm" firstAttribute="leading" secondItem="RyW-6h-4DA" secondAttribute="trailing" constant="8" id="PLZ-iu-QX3"/>
+                                                <constraint firstItem="RyW-6h-4DA" firstAttribute="leading" secondItem="qyp-nC-1rN" secondAttribute="leading" id="PbM-80-Ava"/>
                                                 <constraint firstAttribute="centerY" secondItem="RyW-6h-4DA" secondAttribute="centerY" id="lhH-Jj-gud"/>
-                                                <constraint firstAttribute="centerY" secondItem="rFX-fm-3dm" secondAttribute="centerY" id="umn-Db-iKU"/>
+                                                <constraint firstItem="RyW-6h-4DA" firstAttribute="top" secondItem="qyp-nC-1rN" secondAttribute="top" id="p1U-83-sMR"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="FPt-Km-C30"/>
+                                                    <exclude reference="lhH-Jj-gud"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="nameLabel" destination="RyW-6h-4DA" id="2RQ-hK-Msy"/>
-                                            <outlet property="weightLabel" destination="rFX-fm-3dm" id="ewx-Kx-pe9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

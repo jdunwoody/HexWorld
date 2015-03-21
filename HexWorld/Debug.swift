@@ -43,9 +43,14 @@ class Debug: SKShapeNode {
     }
 
     func update() {
+        let x = debugForces[0].bird.sprite.position.x
+        var y:CGFloat = debugForces[0].bird.sprite.position.y
+        var height:CGFloat = 12.0
+
         for debugForce in debugForces {
             debugForce.update()
+            debugForce.label.position = CGPoint(x: x, y: y + height);
+            y += height
         }
     }
-
 }

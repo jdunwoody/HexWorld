@@ -20,7 +20,7 @@ class Steering {
         self.forces = [
                 Force(name: "wallAvoidance", multiplier: 1.0, enabled: false, calculator: wallAvoidanceFunction()),
                 Force(name: "obstacleAvoidance", multiplier: 1.0, enabled: false, calculator: obstacleAvoidanceFunction()),
-                Force(name: "separation", multiplier: 1.0, enabled: true, calculator: separationFunction()),
+                Force(name: "separation", multiplier: 10.0, enabled: true, calculator: separationFunction()),
                 Force(name: "seek", multiplier: 1.0, enabled: true, calculator: seekFunction()),
                 Force(name: "cohesion", multiplier: 1.0, enabled: true, calculator: cohesionFunction()),
         ]
@@ -29,19 +29,21 @@ class Steering {
     func calculate(subject: Bird, neighbours: [Bird], flock: Flock) -> Vector2D {
         var steeringForceVector = Vector2D()
 
+        //  flock.logPosition()
+
         for force in forces {
             if force.enabled {
                 force.calculate(subject, neighbours: neighbours, target: flock.lead.sprite.position)
 
-                if (!accumulateForce(&steeringForceVector, forceToAdd: force.vector)) {
+                if (!accumulateForce(&steeringForceVector, forceToAdd: force)) {
                     return steeringForceVector
                 }
             }
         }
         return steeringForceVector
     }
-
-    func accumulateForce(inout runningTotal: Vector2D, forceToAdd: Vector2D) -> Bool {
+    
+    func accumulateForce(inout runningTotal: Vector2D, forceToAdd: Force) -> Bool {
         let maxForce: CGFloat = 5.0
 
         var magnitudeSoFar = runningTotal.length
@@ -50,12 +52,12 @@ class Steering {
         if magnitudeRemaining <= 0.0 {
             return false
         }
-        var magnitudeToAdd = forceToAdd.length
+        var magnitudeToAdd:CGFloat = forceToAdd.vector.length
 
         if magnitudeToAdd < magnitudeRemaining {
-            runningTotal += forceToAdd;
+            runningTotal += forceToAdd.vector;
         } else {
-            runningTotal += forceToAdd.normalized * magnitudeRemaining
+            runningTotal += forceToAdd.vector.normalized * magnitudeRemaining
         }
 
         return true
@@ -82,19 +84,20 @@ class Steering {
             var steeringForce = Vector2D()
 
             for neighbour in neighbours {
+
                 if neighbour == bird {
                     continue
                 }
 
                 // this neighbour is not itself
                 // this neighbour it tagged (near enough to this)
-                let toAgent = bird.sprite.position - neighbour.sprite.position
+                let toAgent = Vector2D(point: bird.sprite.position - neighbour.sprite.position)
 
                 //scale the force inversely proportional to the agent's distance from its neighbor.
-                //            let newForce = toAgent.normalized / toAgent.length
-                //            var newSteeringForce = steeringForce + newForce
-                //            //            newSteeringForce += steeringForce + newForce
-                //            steeringForce = steeringForce + newSteeringForce //bird.heading.normalized / toAgent.length
+                let newForce = toAgent.normalized / toAgent.length
+                var newSteeringForce = steeringForce + newForce
+                //            newSteeringForce += steeringForce + newForce
+                steeringForce = steeringForce + newSteeringForce //bird.heading.normalized / toAgent.length
             }
             return steeringForce
         }

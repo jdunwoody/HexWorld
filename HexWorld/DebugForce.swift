@@ -42,7 +42,7 @@ class DebugForce {
         if force.enabled {
             sprite.position = CGPoint(x: bird.sprite.position.x, y: bird.sprite.position.y)
             sprite.path = linePath(force.vector.x, y: force.vector.y)
-            label.position = CGPoint(x: bird.sprite.position.x + bird.sprite.size.width, y: bird.sprite.position.y)
+//            label.position = CGPoint(x: bird.sprite.position.x + bird.sprite.size.width, y: bird.sprite.position.y)
             label.text = "\(force.name) \(force.vector.prettyLength)"
         }
     }

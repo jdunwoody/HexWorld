@@ -9,13 +9,13 @@
 import UIKit
 
 class Force {
-    let multiplier: Float
+    let multiplier: CGFloat
     let enabled: Bool
     let name: String
     let calculator: ((bird:Bird, neighbours:[Bird], target:CGPoint) -> Vector2D)
     var vector: Vector2D
 
-    init(name: String, multiplier: Float, enabled: Bool, calculator: ((bird:Bird, neighbours:[Bird], target:CGPoint) -> Vector2D)) {
+    init(name: String, multiplier: CGFloat, enabled: Bool, calculator: ((bird:Bird, neighbours:[Bird], target:CGPoint) -> Vector2D)) {
         self.name = name
         self.multiplier = multiplier
         self.enabled = enabled
@@ -24,7 +24,7 @@ class Force {
     }
 
     func calculate(bird: Bird, neighbours: [Bird], target: CGPoint) {
-        self.vector = calculator(bird: bird, neighbours: neighbours, target: target)
+        self.vector = calculator(bird: bird, neighbours: neighbours, target: target) * multiplier
     }
 }
 
