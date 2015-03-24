@@ -10,104 +10,82 @@ import SpriteKit
 import UIKit
 
 class GameScene: SKScene {
-    var flock: Flock
-    var world: World
-    var maxYTranslation = 200.0 as CGFloat
+    var world: World?
     var userControlEnabled = true
     var flyingAnimationEnabled = true
     var background: Background
     var sceneStepAmount: Double
 
     override init(size: CGSize) {
-        world = World(bounds: CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height))
-        flock = Flock(world: world)
-        world.flock = flock
         background = Background()
         sceneStepAmount = 45.0
 
         super.init(size: size)
 
         backgroundColor = SKColor.whiteColor()
-
-        world.bounds = CGRect(origin: CGPointZero, size: size)
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func addChildren() {
-        for bird in flock.birds {
-            addChild(bird.sprite)
-
-            for debugForce in bird.debug.debugForces {
-                debugForce.sprite.position = bird.sprite.position
-                addChild(debugForce.sprite)
-                addChild(debugForce.label)
-            }
-        }
-
-//        for sprite in flock.sprites {
-//            addChild(sprite)
-//        }
-
-        if Settings.flyingEnabled {
-            if flyingAnimationEnabled {
-                flock.cruise()
-            }
-        }
-    }
-
-    func configure(origin: CGPoint, maxYTranslation: CGFloat) {
-        //        self.flock.origin = Vector2D(point: origin)
-        self.maxYTranslation = maxYTranslation
-
-
-        flock.configure(CGPoint(x: world.bounds.size.width / 2.0, y: world.bounds.size.height / 2.0), maxYTranslation: maxYTranslation)
-        //        debugControls.position = CGPoint(x: world.bounds.size.width / 2.0, y: 0.0)
-        addChildren()
-
+    func configure(origin: CGPoint) {
+        world = World(bounds: CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height), scene: self);
     }
 
     override func update(newTime: CFTimeInterval) {
         let elapsedTime: CGFloat = CGFloat(self.sceneStepAmount) //CGFloat(newTime - oldTime)
 
-        world.update(elapsedTime)
+        if let theWorld = world {
+            theWorld.update(elapsedTime)
+        }
     }
 
     func pannedLeft(percentage: CGFloat) {
         if userControlEnabled {
-            flock.turningLeft(percentage)
+            if let theWorld = world {
+                theWorld.flock.turningLeft(percentage)
+            }
         }
     }
 
     func pannedRight(percentage: CGFloat) {
         if userControlEnabled {
-            flock.turningRight(percentage)
+            if let theWorld = world {
+                theWorld.flock.turningRight(percentage)
+            }
         }
     }
 
     func stoppedHorizontalPanning() {
         if userControlEnabled {
-            flock.straighten()
+            if let theWorld = world {
+                theWorld.flock.straighten()
+            }
         }
     }
 
     func stoppedVerticalPanning() {
         if userControlEnabled {
-            flock.cruise()
+            if let theWorld = world {
+                theWorld.flock.cruise()
+            }
         }
     }
 
     func pannedForward(percentage: CGFloat) {
         if userControlEnabled {
-            flock.accelerate(min(1.0, percentage))
+            if let theWorld = world {
+                theWorld.flock.accelerate(min(1.0, percentage))
+            }
         }
     }
 
     func pannedBackward(percentage: CGFloat) {
         if userControlEnabled {
-            flock.decelerate(min(1.0, percentage))
+            if let theWorld = world {
+                theWorld.flock.decelerate(min(1.0, percentage))
+            }
         }
     }
 
@@ -137,7 +115,10 @@ class GameScene: SKScene {
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
 
-            self.flock.lead.sprite.position = location
+            if let theWorld = world {
+                theWorld.flock.lead.sprite.position = location
+            }
         }
     }
+
 }

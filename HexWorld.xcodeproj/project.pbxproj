@@ -40,6 +40,10 @@
 		9E601DEF1A9F3EBB00ECF036 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E601DEE1A9F3EBB00ECF036 /* Background.swift */; };
 		9E9114ED1ABD1F3D008ADB75 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E9114EC1ABD1F3D008ADB75 /* Settings.bundle */; };
 		9ED2EC021AA84E2300376D28 /* SparrowBird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9ED2EC011AA84E2300376D28 /* SparrowBird.atlas */; };
+		9EEB0A441AC18B1F00B72CC9 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB0A421AC18B1F00B72CC9 /* MyParticle.sks */; };
+		9EEB0A451AC18B1F00B72CC9 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB0A431AC18B1F00B72CC9 /* spark.png */; };
+		9EEB0A481AC18D7F00B72CC9 /* Stars.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB0A461AC18D7F00B72CC9 /* Stars.scnp */; };
+		9EEB0A491AC18D7F00B72CC9 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB0A471AC18D7F00B72CC9 /* star.png */; };
 		9EFD1D561AABC3F000012652 /* SettingsTableDelegateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD1D551AABC3F000012652 /* SettingsTableDelegateDataSource.swift */; };
 		9EFD1D581AABC9E400012652 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD1D571AABC9E400012652 /* Setting.swift */; };
 		9EFD1D5A1AAC0D3400012652 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFD1D591AAC0D3400012652 /* SettingsTableViewController.swift */; };
@@ -94,6 +98,10 @@
 		9E601DEE1A9F3EBB00ECF036 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Background.swift; path = Background/Background.swift; sourceTree = "<group>"; };
 		9E9114EC1ABD1F3D008ADB75 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9ED2EC011AA84E2300376D28 /* SparrowBird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SparrowBird.atlas; sourceTree = "<group>"; };
+		9EEB0A421AC18B1F00B72CC9 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		9EEB0A431AC18B1F00B72CC9 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		9EEB0A461AC18D7F00B72CC9 /* Stars.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Stars.scnp; sourceTree = "<group>"; };
+		9EEB0A471AC18D7F00B72CC9 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		9EFD1D551AABC3F000012652 /* SettingsTableDelegateDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableDelegateDataSource.swift; sourceTree = "<group>"; };
 		9EFD1D571AABC9E400012652 /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		9EFD1D591AAC0D3400012652 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +207,8 @@
 				9EFD1D4E1AAAB61E00012652 /* Scene */,
 				9E23C9A41AA19C810059305E /* Settings */,
 				9E35B01B1A985CB100FFA9F7 /* Supporting Files */,
+				9EEB0A421AC18B1F00B72CC9 /* MyParticle.sks */,
+				9EEB0A431AC18B1F00B72CC9 /* spark.png */,
 			);
 			path = HexWorld;
 			sourceTree = "<group>";
@@ -212,6 +222,8 @@
 				9E35B02A1A985CB100FFA9F7 /* LaunchScreen.xib */,
 				9E35B0251A985CB100FFA9F7 /* Main.storyboard */,
 				9E35B01C1A985CB100FFA9F7 /* Info.plist */,
+				9EEB0A461AC18D7F00B72CC9 /* Stars.scnp */,
+				9EEB0A471AC18D7F00B72CC9 /* star.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -366,13 +378,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E35B02C1A985CB100FFA9F7 /* LaunchScreen.xib in Resources */,
+				9EEB0A451AC18B1F00B72CC9 /* spark.png in Resources */,
 				9E35B0291A985CB100FFA9F7 /* Images.xcassets in Resources */,
 				9E9114ED1ABD1F3D008ADB75 /* Settings.bundle in Resources */,
 				9E23C9A91AA1A8AE0059305E /* AvatarBird.atlas in Resources */,
 				9E601DCE1A9F38D200ECF036 /* Root.plist in Resources */,
 				9E35B0201A985CB100FFA9F7 /* GameScene.sks in Resources */,
+				9EEB0A441AC18B1F00B72CC9 /* MyParticle.sks in Resources */,
 				9ED2EC021AA84E2300376D28 /* SparrowBird.atlas in Resources */,
 				9E601DCC1A9F38D200ECF036 /* Main.storyboard in Resources */,
+				9EEB0A481AC18D7F00B72CC9 /* Stars.scnp in Resources */,
+				9EEB0A491AC18D7F00B72CC9 /* star.png in Resources */,
 				9E35B0491A985F1E00FFA9F7 /* Texture.atlas in Resources */,
 				9E35B0271A985CB100FFA9F7 /* Main.storyboard in Resources */,
 			);

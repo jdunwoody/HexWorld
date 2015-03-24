@@ -27,7 +27,7 @@ extension SKNode {
 
 class GameViewController: UIViewController {
 
-    let delegateDataSource: SettingsTableDelegateDataSource;
+    let delegateDataSource: SettingsTableDelegateDataSource
     var sceneRef: GameScene?
     var controlPoint2 = Vector2D()
     var birdDetailsDataSourceDelegate: BirdDetailsDataSourceDelegate?
@@ -48,9 +48,9 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func settingsPressed(sender: AnyObject) {
-          UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+        UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
     }
-    
+
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -58,41 +58,43 @@ class GameViewController: UIViewController {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
-        self.sceneRef = GameScene(size: self.view.frame.size)
+        if sceneRef == nil {
+            sceneRef = GameScene(size: self.view.frame.size)
 
-        self.timeStepControl.addTarget(self, action: "timeStepChanged:", forControlEvents: .ValueChanged)
+            self.timeStepControl.addTarget(self, action: "timeStepChanged:", forControlEvents: .ValueChanged)
 
-        if let scene = sceneRef {
-            self.timeStepControl.value = scene.sceneStepAmount
-            
-            self.birdDetailsDataSourceDelegate = BirdDetailsDataSourceDelegate(flock: scene.flock)
-            self.birdDetailsTableView.dataSource = self.birdDetailsDataSourceDelegate!
-            self.birdDetailsTableView.delegate = self.birdDetailsDataSourceDelegate!
+            if let scene = sceneRef {
+                scene.configure(view.center)
 
-            self.debugLabel.text = ""
+                self.timeStepControl.value = scene.sceneStepAmount
 
-            for debugForce: DebugForce in scene.flock.lead.debug.debugForces {
-                let text = self.debugLabel.text! as String
-                let name = debugForce.force.name as String
-                let newText = text + name
-                self.debugLabel.text = text + name
+                self.birdDetailsDataSourceDelegate = BirdDetailsDataSourceDelegate(flock: scene.world!.flock)
+                self.birdDetailsTableView.dataSource = self.birdDetailsDataSourceDelegate!
+                self.birdDetailsTableView.delegate = self.birdDetailsDataSourceDelegate!
+
+                self.debugLabel.text = ""
+
+//                for debugForce: DebugForce in scene.flock.lead.debug.debugForces {
+//                    let text = self.debugLabel.text! as String
+//                    let name = debugForce.force.name as String
+//                    let newText = text + name
+//                    self.debugLabel.text = text + name
+//                }
+
+                let skView = self.view as SKView
+                skView.showsFPS = true
+                skView.showsNodeCount = true
+
+                /* Sprite Kit applies additional optimizations to improve rendering performance */
+                skView.ignoresSiblingOrder = true
+
+                /* Set the scale mode to scale to fit the window */
+                scene.scaleMode = .AspectFill
+
+                scene.size = skView.bounds.size
+
+                skView.presentScene(scene)
             }
-
-            scene.configure(view.center, maxYTranslation: self.controlsView.frame.height)
-
-            let skView = self.view as SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-
-            scene.size = skView.bounds.size;
-
-            skView.presentScene(scene)
         }
     }
 

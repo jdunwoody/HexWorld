@@ -3,8 +3,6 @@ import UIKit
 import SpriteKit
 
 class Bird {
-    var maxYTranslation = 0.0 as CGFloat
-
     let velocity: Vector2D
     let heading: Vector2D
     let side: Vector2D
@@ -16,16 +14,14 @@ class Bird {
     let steering: Steering
     let actions: BirdActions
     let sprite: BirdSprite
-    let world: World
-    let debug: Debug
+    let debug: Debug?
     let name: String
     let weight: CGFloat
 
-    init(name: String, weight: CGFloat, world: World, textures: BirdTextures) {
+    init(name: String, weight: CGFloat,textures: BirdTextures, scene:GameScene) {
         self.name = name
         self.weight = weight
-        self.world = world
-        self.steering = Steering(world: world)
+        self.steering = Steering()
         self.actions = BirdActions(textures: textures)
         self.sprite = BirdSprite(actions: self.actions, textures: textures)
         self.heading = Vector2D(x: 0, y: 1.0)
@@ -35,13 +31,18 @@ class Bird {
         self.maxSpeed = 10.0
         self.maxForce = 10.0
         self.maxTurnRate = 10.0
-        self.debug = Debug(steering: steering)
+
+        scene.addChild(sprite)
+
+        self.sprite.position = CGPoint(x: 100.0, y: 100.0)
+
+        self.debug = Debug(steering: steering, bird: self)
     }
 
-    func configure(origin: CGPoint, maxYTranslation: CGFloat) {
-        self.debug.configure(self)
-        self.maxYTranslation = maxYTranslation
-        self.sprite.position = origin
+    func remove()
+    {
+        sprite.removeFromParent()
+        debug!.remove()
     }
 
     //    func fly()
@@ -52,26 +53,26 @@ class Bird {
     func cruise() {
         sprite.removeActionForKey("flying")
         sprite.runAction(actions.fly(0.5), withKey: "flying")
-        sprite.runAction(SKAction.moveTo(world.centre, duration: 0.2))
+//        sprite.runAction(SKAction.moveTo(world.centre, duration: 0.2))
         //        sprite.removeActionForKey("advancing")
         //        sprite.removeActionForKey("decelerating")
     }
 
     func accelerate(percentage: CGFloat) {
-        sprite.removeActionForKey("flying")
-        let amount = world.centre.y - percentage * maxYTranslation
-
-        self.sprite.position.y = self.world.clipY(amount)
-
-        sprite.runAction(actions.fly(percentage), withKey: "flying")
+//        sprite.removeActionForKey("flying")
+//        let amount = world.centre.y - percentage
+//
+//        self.sprite.position.y = self.world.clipY(amount)
+//
+//        sprite.runAction(actions.fly(percentage), withKey: "flying")
     }
 
     func deccelerate(percentage: CGFloat) {
-        sprite.removeActionForKey("flying")
-        let amount = world.centre.y + percentage * maxYTranslation
-        self.sprite.position.y = self.world.clipY(amount)
-
-        sprite.runAction(actions.fly(percentage), withKey: "flying")
+//        sprite.removeActionForKey("flying")
+//        let amount = world.centre.y + percentage
+//        self.sprite.position.y = self.world.clipY(amount)
+//
+//        sprite.runAction(actions.fly(percentage), withKey: "flying")
     }
 
     func straighten() {
@@ -132,7 +133,7 @@ class Bird {
             side.update(heading.perpendicular)
         }
 
-        self.debug.update()
+        self.debug!.update()
     }
 
     //    func normalFlappingAnimation() -> SKAction {

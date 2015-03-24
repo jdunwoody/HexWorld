@@ -27,13 +27,13 @@ class SettingsTableDelegateDataSource: NSObject, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("switchCell", forIndexPath: indexPath) as UITableViewCell
 
-        let setting = settings[indexPath.row]
+        if let setting = settings[indexPath.row] {
+            let label = cell.viewWithTag(100) as UILabel
+            let switchControl = cell.viewWithTag(101) as UISwitch
 
-        let label = cell.viewWithTag(100) as UILabel
-        let switchControl = cell.viewWithTag(101) as UISwitch
-
-        label.text = setting.name
-        switchControl.selected = setting.enabled
+            label.text = setting.name
+            switchControl.selected = setting.enabled
+        }
 
         return cell
     }

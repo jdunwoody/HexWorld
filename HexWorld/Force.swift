@@ -10,17 +10,22 @@ import UIKit
 
 class Force {
     let multiplier: CGFloat
-    let enabled: Bool
+    var enabled: Bool
     let name: String
     let calculator: ((bird:Bird, neighbours:[Bird], target:CGPoint) -> Vector2D)
     var vector: Vector2D
 
-    init(name: String, multiplier: CGFloat, enabled: Bool, calculator: ((bird:Bird, neighbours:[Bird], target:CGPoint) -> Vector2D)) {
+    init(name: String, multiplier: CGFloat, calculator: ((bird:Bird, neighbours:[Bird], target:CGPoint) -> Vector2D)) {
         self.name = name
         self.multiplier = multiplier
-        self.enabled = enabled
         self.calculator = calculator
         self.vector = Vector2D()
+
+        if let setting = Settings()[self.name] {
+            enabled = setting.enabled
+        } else {
+            enabled = false
+        }
     }
 
     func calculate(bird: Bird, neighbours: [Bird], target: CGPoint) {

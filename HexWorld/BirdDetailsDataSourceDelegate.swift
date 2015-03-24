@@ -8,7 +8,7 @@ import UIKit
 
 class BirdDetailsDataSourceDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
 
-    let flock: Flock;
+    let flock: Flock
 
     init(flock: Flock) {
         self.flock = flock

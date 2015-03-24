@@ -16,11 +16,12 @@ class Settings {
         data = [
                 Setting(name: "flying_enabled_preference"),
                 Setting(name: "number_of_birds_preference"),
-                Setting(name: "show_walls_preference"),
-                Setting(name: "show_obstacles_preference"),
-                Setting(name: "show_steering_force_preference"),
-                Setting(name: "show_feelers_preference"),
-                Setting(name: "show_detection_box_preference"),
+                Setting(name: "debugging_info_enabled"),
+                Setting(name: "wallAvoidance"),
+                Setting(name: "obstacleAvoidance"),
+                Setting(name: "separation"),
+                Setting(name: "seek"),
+                Setting(name: "cohesion"),
         ]
     }
 
@@ -28,7 +29,16 @@ class Settings {
         return data.count
     }
 
-    subscript(index: Int) -> Setting {
+    subscript(name: String) -> Setting? {
+        for setting in data {
+            if setting.name == name {
+                return setting
+            }
+        }
+        return nil
+    }
+
+    subscript(index: Int) -> Setting? {
         return data[index]
     }
 
@@ -41,10 +51,10 @@ class Settings {
         }
     }
 
-    class var initialNumberOfBirds: Int {
+    class var numberOfBirds: Int {
         get {
             let def = NSUserDefaults.standardUserDefaults()
-            
+
             if let numberOfBirds = NSUserDefaults.standardUserDefaults().objectForKey("number_of_birds_preference") as Int? {
                 return numberOfBirds
             }
@@ -52,49 +62,9 @@ class Settings {
         }
     }
 
-    class var showWalls: Bool {
+    class var debuggingInfoEnabled: Bool {
         get {
-            if let showWalls = NSUserDefaults.standardUserDefaults().objectForKey("show_walls_preference") as Bool? {
-                return showWalls
-            }
-            return false
-
-        }
-    }
-
-    class var showObstacles: Bool {
-        get {
-            if let showObstacles = NSUserDefaults.standardUserDefaults().objectForKey("show_obstacles_preference") as Bool? {
-                return showObstacles
-            }
-            return false
-
-        }
-    }
-
-    class var showSteeringForce: Bool {
-        get {
-            if let showSteeringForce = NSUserDefaults.standardUserDefaults().objectForKey("show_steering_force_preference") as Bool? {
-                return showSteeringForce
-            }
-            return false
-
-        }
-    }
-
-    class var showFeelers: Bool {
-        get {
-            if let showFeelers = NSUserDefaults.standardUserDefaults().objectForKey("show_feelers_preference") as Bool? {
-                return showFeelers
-            }
-            return false
-
-        }
-    }
-
-    class var showDetectionBox: Bool {
-        get {
-            if let showDetectionBox = NSUserDefaults.standardUserDefaults().objectForKey("show_detection_box_preference") as Bool? {
+            if let showDetectionBox = NSUserDefaults.standardUserDefaults().objectForKey("debugging_info_enabled") as Bool? {
                 return showDetectionBox
             }
             return false

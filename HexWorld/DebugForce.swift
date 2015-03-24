@@ -30,6 +30,18 @@ class DebugForce {
         update()
     }
 
+    func configure(scene: GameScene)
+    {
+        sprite.position = bird.sprite.position
+        scene.addChild(sprite)
+        scene.addChild(label)
+    }
+
+    func remove() {
+        sprite.removeFromParent()
+        label.removeFromParent()
+    }
+
     func update() {
         sprite.hidden = !force.enabled
         label.hidden = !force.enabled

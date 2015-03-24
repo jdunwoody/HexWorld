@@ -5,10 +5,7 @@ class Flock: NSObject, SequenceType {
 
     let lead: Bird
     var birds: [Bird]
-
-//    init(_ enumerator: NSEnumerator) {
-//        self.enumerator = enumerator
-//    }
+    let scene: GameScene
 
     var sprites: [SKSpriteNode] {
         get {
@@ -18,27 +15,63 @@ class Flock: NSObject, SequenceType {
         }
     }
 
-    init(world: World) {
-        birds = [
-                Bird(name: "Lead", weight: 1.0, world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "AvatarBird.atlas"))),
-        ]
+    init(scene: GameScene, centre: CGPoint) {
+        self.scene = scene
+        self.birds = [Bird(name: "Lead", weight: 1.0, textures: BirdTextures(atlas: SKTextureAtlas(named: "AvatarBird.atlas")), scene: scene)];
 
-        for (var i = 0; i < Settings.initialNumberOfBirds; i++) {
-            let weight: CGFloat = 0.2 * CGFloat(i)
-            birds.append(Bird(name: "Bird\(i)", weight: weight, world: world, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas"))))
+        self.lead = birds[0]
+
+        super.init()
+
+        for (var i = 0; i < Settings.numberOfBirds + 1; i++) {
+            let bird = addBird("Bird\(i)")
+
+            bird.sprite.position = CGPoint(x: CGFloat(arc4random_uniform(200)), y: CGFloat(arc4random_uniform(200)));
         }
 
-        lead = birds[0]
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "settingsChanged", name: NSUserDefaultsDidChangeNotification, object: nil)
+    }
+
+    func addBird(name: String) -> Bird {
+        let bird = Bird(name: name, weight: 1.0, textures: BirdTextures(atlas: SKTextureAtlas(named: "SparrowBird.atlas")), scene: self.scene)
+        birds.append(bird)
+
+        return bird
+    }
+
+    func settingsChanged() {
+        if let numberOfBirdsSetting = Settings()["number_of_birds_preference"] {
+            let newNumberOfBirds = numberOfBirdsSetting.intValue
+            let currentNumberOfBirds = birds.count
+
+            if newNumberOfBirds > currentNumberOfBirds {
+                for i in (currentNumberOfBirds ... newNumberOfBirds) {
+                    addBird("Bird\(i)")
+                }
+            } else {
+                let birdsToRemoveRange = Range(start: newNumberOfBirds, end: currentNumberOfBirds)
+                let birdsToRemove = birds[birdsToRemoveRange]
+
+                for bird in birdsToRemove {
+                    removeBird(bird)
+                }
+                birds.removeRange(birdsToRemoveRange)
+            }
+        }
+    }
+
+    func removeBird(bird: Bird) {
+        bird.remove()
     }
 
     func logPosition() {
         NSLog("Flock position")
-        
+
         for bird: Bird in birds {
             NSLog("\(bird.sprite.position)")
         }
     }
-    
+
     subscript(index: Int) -> Bird {
         return birds[index]
     }
@@ -72,24 +105,6 @@ class Flock: NSObject, SequenceType {
         }
 
         return neighbours
-    }
-
-    func configure(centre: CGPoint, maxYTranslation: CGFloat) {
-        lead.configure(centre, maxYTranslation: maxYTranslation)
-
-        for bird in birds {
-            if bird == lead {
-                continue
-            }
-            let x = CGFloat(arc4random_uniform(200))
-            let y = CGFloat(arc4random_uniform(200))
-
-            //            let x = CGFloat(200)
-            //            let y = CGFloat(200)
-
-            let birdOrigin = CGPoint(x: x, y: y)
-            bird.configure(birdOrigin, maxYTranslation: maxYTranslation)
-        }
     }
 
     func turningRight(percentage: CGFloat) {

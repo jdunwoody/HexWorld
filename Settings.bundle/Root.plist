@@ -27,22 +27,12 @@
                 <string>Forces Enabled</string>
             </dict>
             <dict>
-                <key>DefaultValue</key>
-                <true/>
-                <key>Key</key>
-                <string>cohesion_enabled_preference</string>
-                <key>Title</key>
-                <string>Cohesion</string>
-                <key>Type</key>
-                <string>PSToggleSwitchSpecifier</string>
-            </dict>
-            <dict>
                 <key>Type</key>
                 <string>PSToggleSwitchSpecifier</string>
                 <key>Title</key>
                 <string>Wall Avoidance</string>
                 <key>Key</key>
-                <string>show_walls_preference</string>
+                <string>wallAvoidance</string>
                 <key>DefaultValue</key>
                 <false/>
             </dict>
@@ -52,7 +42,7 @@
                 <key>Title</key>
                 <string>Obstacle Avoidance</string>
                 <key>Key</key>
-                <string>show_obstacles_preference</string>
+                <string>obstacleAvoidance</string>
                 <key>DefaultValue</key>
                 <false/>
             </dict>
@@ -60,9 +50,45 @@
                 <key>Type</key>
                 <string>PSToggleSwitchSpecifier</string>
                 <key>Title</key>
-                <string>Show Steering Force</string>
+                <string>Separation</string>
                 <key>Key</key>
-                <string>show_steering_force_preference</string>
+                <string>separation</string>
+                <key>DefaultValue</key>
+                <false/>
+            </dict>
+            <dict>
+                <key>DefaultValue</key>
+                <true/>
+                <key>Key</key>
+                <string>seek</string>
+                <key>Title</key>
+                <string>Seek</string>
+                <key>Type</key>
+                <string>PSToggleSwitchSpecifier</string>
+            </dict>
+            <dict>
+                <key>DefaultValue</key>
+                <true/>
+                <key>Key</key>
+                <string>cohesion</string>
+                <key>Title</key>
+                <string>Cohesion</string>
+                <key>Type</key>
+                <string>PSToggleSwitchSpecifier</string>
+            </dict>
+            <dict>
+                <key>Type</key>
+                <string>PSGroupSpecifier</string>
+                <key>Title</key>
+                <string>World Elements Enabled</string>
+            </dict>
+            <dict>
+                <key>Type</key>
+                <string>PSToggleSwitchSpecifier</string>
+                <key>Title</key>
+                <string>Show Debugging Info</string>
+                <key>Key</key>
+                <string>debugging_info_enabled</string>
                 <key>DefaultValue</key>
                 <false/>
             </dict>

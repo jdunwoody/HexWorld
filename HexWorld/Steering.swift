@@ -10,26 +10,40 @@ import Foundation
 import SpriteKit
 import Accelerate
 
-class Steering {
-    let world: World
+class Steering: NSObject {
     var forces: [Force] = []
 
-    init(world: World) {
-        self.world = world
+    override init() {
+        self.forces = []
 
-        self.forces = [
-                Force(name: "wallAvoidance", multiplier: 1.0, enabled: false, calculator: wallAvoidanceFunction()),
-                Force(name: "obstacleAvoidance", multiplier: 1.0, enabled: false, calculator: obstacleAvoidanceFunction()),
-                Force(name: "separation", multiplier: 1.0, enabled: true, calculator: separationFunction()),
-                Force(name: "seek", multiplier: 1.0, enabled: true, calculator: seekFunction()),
-                Force(name: "cohesion", multiplier: 1.0, enabled: true, calculator: cohesionFunction()),
+        super.init()
+
+        self.forces += [
+                Force(name: "wallAvoidance", multiplier: 1.0, calculator: wallAvoidanceFunction()),
+                Force(name: "obstacleAvoidance", multiplier: 1.0, calculator: obstacleAvoidanceFunction()),
+                Force(name: "separation", multiplier: 1.0, calculator: separationFunction()),
+                Force(name: "seek", multiplier: 1.0, calculator: seekFunction()),
+                Force(name: "cohesion", multiplier: 1.0, calculator: cohesionFunction()),
         ]
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "settingsChanged", name: NSUserDefaultsDidChangeNotification, object: nil)
+    }
+
+    func settingsChanged() {
+        let settings = Settings()
+        for force in forces {
+            if let setting = settings[force.name] {
+                force.enabled = setting.enabled
+                NSLog("force \(force.name) is enabled \(force.enabled)")
+            } else {
+                NSLog("no setting for \(force.name)")
+
+            }
+        }
     }
 
     func calculate(subject: Bird, neighbours: [Bird], flock: Flock) -> Vector2D {
         var steeringForceVector = Vector2D()
-
-        //  flock.logPosition()
 
         for force in forces {
             if force.enabled {
@@ -93,7 +107,8 @@ class Steering {
 
     func cohesionFunction() -> ((Bird, [Bird], CGPoint) -> Vector2D) {
         func calculate(bird: Bird, neighbours: [Bird], target: CGPoint) -> Vector2D {
-            return seekFunction()(bird, neighbours, world.centreOfMass())
+            let centreOfMass = CGPoint(x: 100.0, y: 100.0)
+            return seekFunction()(bird, neighbours, centreOfMass)
         }
 
         return calculate
